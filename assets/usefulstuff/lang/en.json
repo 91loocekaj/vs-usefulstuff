@@ -1,0 +1,15 @@
+{
+  "item-shield-wicker" : "Wicker Shield",
+  "item-shield-pelt" : "Hide Shield",
+  "item-shield-leather" : "Leather Shield",
+  "item-shield-linen" : "Composite Shield",
+
+  "block-climbingrope-start-*": "Rope Anchor",
+  "block-climbingrope-section-*": "Climbing Rope",
+  "block-sluice-*": "Sluice Ramp",
+
+  "blockhelp-anchor-deploy": "Deploy Rope",
+  "blockhelp-anchor-retract": "Bring Up Rope",
+
+  "itemhelp-shield": "Block",
+}

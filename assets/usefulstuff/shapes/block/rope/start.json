@@ -1,0 +1,57 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"bamboo-top": "game:block/hay/bamboo-top",
+		"birch": "game:block/wood/debarked/birch"
+	},
+	"elements": [
+		{
+			"name": "RopeStart",
+			"from": [ 7.0, 0.0, 1.0 ],
+			"to": [ 9.0, 12.0, 3.0 ],
+			"rotationOrigin": [ 7.0, 0.0, 1.0 ],
+			"faces": {
+				"north": { "texture": "#bamboo-top", "uv": [ 0.0, 0.0, 2.0, 12.0 ] },
+				"east": { "texture": "#bamboo-top", "uv": [ 0.0, 0.0, 2.0, 12.0 ] },
+				"south": { "texture": "#bamboo-top", "uv": [ 0.0, 0.0, 2.0, 12.0 ] },
+				"west": { "texture": "#bamboo-top", "uv": [ 0.0, 0.0, 2.0, 12.0 ] },
+				"up": { "texture": "#bamboo-top", "uv": [ 0.0, 0.0, 2.0, 2.0 ], "enabled": false },
+				"down": { "texture": "#bamboo-top", "uv": [ 0.0, 0.0, 2.0, 2.0 ] }
+			}
+		},
+		{
+			"name": "Stake",
+			"from": [ 7.0, 13.0, 0.0 ],
+			"to": [ 9.0, 15.0, 4.0 ],
+			"rotationOrigin": [ 7.0, 13.0, 0.0 ],
+			"faces": {
+				"north": { "texture": "#birch", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+				"east": { "texture": "#birch", "uv": [ 0.0, 0.0, 4.0, 2.0 ] },
+				"south": { "texture": "#birch", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+				"west": { "texture": "#birch", "uv": [ 0.0, 0.0, 4.0, 2.0 ] },
+				"up": { "texture": "#birch", "uv": [ 0.0, 0.0, 2.0, 4.0 ] },
+				"down": { "texture": "#birch", "uv": [ 0.0, 0.0, 2.0, 4.0 ] }
+			}
+		},
+		{
+			"name": "Knot",
+			"from": [ 6.0, 12.0, 1.0 ],
+			"to": [ 10.0, 16.0, 3.0 ],
+			"rotationOrigin": [ 6.0, 12.0, 1.0 ],
+			"faces": {
+				"north": { "texture": "#bamboo-top", "uv": [ 0.0, 0.0, 4.0, 4.0 ] },
+				"east": { "texture": "#bamboo-top", "uv": [ 0.0, 0.0, 2.0, 4.0 ] },
+				"south": { "texture": "#bamboo-top", "uv": [ 0.0, 0.0, 4.0, 4.0 ] },
+				"west": { "texture": "#bamboo-top", "uv": [ 0.0, 0.0, 2.0, 4.0 ] },
+				"up": { "texture": "#bamboo-top", "uv": [ 0.0, 0.0, 4.0, 2.0 ] },
+				"down": { "texture": "#bamboo-top", "uv": [ 0.0, 0.0, 4.0, 2.0 ] }
+			}
+		}
+	]}

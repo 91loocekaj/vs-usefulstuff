@@ -1,0 +1,46 @@
+{
+	code: "sluice",
+	behaviors: [{name: "HorizontalOrientable"}],
+  entityclass: "BESluice",
+  shapebytype: {
+		"*-north": { base: "block/wood/sluice", rotateY: 0 },
+		"*-east": { base: "block/wood/sluice", rotateY: 270 },
+		"*-south": { base: "block/wood/sluice", rotateY: 180 },
+		"*-west": { base: "block/wood/sluice", rotateY: 90 }
+	},
+	variantgroups: [
+		{ code:"side", loadFromProperties: "abstract/horizontalorientation" }
+	],
+	creativeinventory: { "general": ["sluice-north"], "decorative": ["sluice-north"] },
+	replaceable: 500,
+	blockmaterial: "Wood",
+	resistance: 1.5,
+	renderpass: "opaquenocull",
+	lightAbsorption: 99,
+	sidesolid: {
+		all: false,
+	},
+	sideopaque: {
+		all: false,
+	},
+	sideAO: {
+		all: false
+	},
+	textures: {
+    all : { base: "game:block/wood/planks/pine1" },
+    "water" : { base: "game:block/liquid/waterportion" },
+  },
+	sounds: {
+		"place": "game:block/planks",
+		"hit": "game:block/planks",
+		"break": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	materialDensity: 600,
+	heldTpIdleAnimation: "holdbothhandslarge", heldTpUseAnimation: "twohandplaceblock",
+	tpHandTransform: {
+		translation: { x: -1.2, y: -1.1, z: -0.8 },
+		rotation: { x: -2, y: 25, z: -78 },
+		scale: 0.37
+	}
+}

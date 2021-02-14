@@ -1,0 +1,12 @@
+{
+	ingredientPattern: "LKR",
+	ingredients: {
+		"K": { type: "item", code: "game:knife-*", isTool: true },
+    "R": { type: "item", code: "game:rope"},
+		"L": { type: "block", code: "game:log-*"}
+	},
+	width: 3,
+	height: 1,
+  shapeless: true,
+	output: { type: "block", code: "usefulstuff:climbingrope-start-north"  }
+}

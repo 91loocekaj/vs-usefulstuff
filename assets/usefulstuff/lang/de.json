@@ -1,0 +1,15 @@
+{
+  "item-shield-wicker" : "Schild (Geflecht)",
+  "item-shield-pelt" : "Schild (Pelz)",
+  "item-shield-leather" : "Schild (Leder)",
+  "item-shield-linen" : "Schild (Verbundwerkstoff)",
+
+  "block-climbingrope-start-*": "Seilanker",
+  "block-climbingrope-section-*": "Kletterseil",
+  "block-sluice-*": "Waschrinne",
+
+  "blockhelp-anchor-deploy": "Seil ablassen",
+  "blockhelp-anchor-retract": "Seil hochziehen",
+
+  "itemhelp-shield": "Blocken",
+}

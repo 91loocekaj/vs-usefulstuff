@@ -1,0 +1,13 @@
+[
+  {
+  	ingredientPattern: "R_S,_SP,SPP",
+  	ingredients: {
+  		"S": { type: "item", code: "game:stick", quantity: 4 },
+      "P": { type: "item", code: "game:plank-*", quantity: 4 },
+      "R": { type: "item", code: "game:resin", quantity: 4 },
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "block", code: "usefulstuff:sluice-north"  }
+  },
+]

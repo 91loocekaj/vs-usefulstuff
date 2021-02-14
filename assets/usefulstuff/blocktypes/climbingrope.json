@@ -1,0 +1,83 @@
+{
+	code: "climbingrope",
+  classByType:{
+    "*-start-*": "BlockRappelAnchor",
+    "*-section-*": "BlockClimbingRope"
+  },
+	behaviors: [{name: "HorizontalAttachable"}],
+	attributes: {
+
+	},
+	variantgroups: [
+    {code:"part", states: ["start", "section"]},
+		{ code:"side", loadFromProperties: "abstract/horizontalorientation" }
+	],
+	creativeinventory: { "general": ["*-start-north"], "decorative": ["*-start-north"] },
+	shapebytype: {
+		"*-north": { base: "block/rope/{part}", rotateY: 0 },
+		"*-east": { base: "block/rope/{part}", rotateY: 270 },
+		"*-south": { base: "block/rope/{part}", rotateY: 180 },
+		"*-west": { base: "block/rope/{part}", rotateY: 90 }
+	},
+	blockmaterial: "Cloth",
+	replaceable: 500,
+	lightAbsorption: 0,
+	rainPermeable: true,
+	climbable: true,
+	sidesolid: {
+		all: false
+	},
+	sideopaque: {
+		all: false
+	},
+	sideAO: {
+		all: false
+	},
+	resistance: 1.25,
+	sounds: {
+		"place": "game:block/planks",
+		"hit": "game:block/planks",
+		"break": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	combustibleProps: {
+		burnTemperature: 600,
+		burnDuration: 12,
+	},
+	collisionbox: {
+		x1: 0.375, y1: 0, z1: 0,
+		x2: 0.625, y2: 1, z2: 0.25,
+		rotateYByType: {
+			"*-east": 270,
+			"*-south": 180,
+			"*-west": 90,
+			"*-north": 0
+		}
+	},
+	selectionbox: {
+		x1: 0.375, y1: 0, z1: 0,
+		x2: 0.625, y2: 1, z2: 0.25,
+		rotateYByType: {
+			"*-east": 270,
+			"*-south": 180,
+			"*-west": 90,
+			"*-north": 0
+		}
+	},
+  groundTransform: {
+  translation: { x: 0, y: -0.05, z: 0 },
+  rotation: { x: 90, y: -45, z: 0 },
+  origin: { x: 0.5, y: 0, z: 0.5 },
+  scale: 1.5
+},
+guiTransform: {
+  translation: { x: -7, y: 0, z: 0 },
+  rotation: { x: -23, y: -34, z: 32 },
+  scale: 1.77
+},
+tpHandTransform: {
+  translation: { x: -1.64, y: -1.8, z: -1.72 },
+  rotation: { x: 2, y: -40, z: 0 }
+},
+	materialDensity: 600
+}
