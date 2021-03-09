@@ -1,0 +1,27 @@
+[
+  {
+    "op": "add",
+    "path": "/patches/80",
+    "value": {
+      "comment": "Locust Hordes",
+      "blockCodes": [
+        "usefulstuff:locusthorde-andesite"
+      ],
+      "quantity": {
+        "avg": 1,
+        "var": 3
+      },
+      "chance": 10,
+      "offsetX": {
+        "avg": 0,
+        "var": 8
+      },
+      "offsetZ": {
+        "avg": 0,
+        "var": 8
+      },
+      "placement": "Underground"
+    },
+    "file": "game:worldgen/blockpatches.json"
+  }
+]

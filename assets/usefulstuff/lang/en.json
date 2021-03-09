@@ -7,6 +7,7 @@
   "block-climbingrope-start-*": "Rope Anchor",
   "block-climbingrope-section-*": "Climbing Rope",
   "block-sluice-*": "Sluice Ramp",
+  "block-locusthorde-*": "Locust Horde",
 
   "blockhelp-anchor-deploy": "Deploy Rope",
   "blockhelp-anchor-retract": "Bring Up Rope",

@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\jakec\AppData\Roaming\Vintagestory\Lib\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -66,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Block Entity\BESluice.cs" />
+    <Compile Include="src\Block\BlockLocustHorde.cs" />
     <Compile Include="src\Block\BlockClimbingRope.cs" />
     <Compile Include="src\Block\BlockRappelAnchor.cs" />
     <Compile Include="src\Behavior\EntityBehaviorShield.cs" />

@@ -13,6 +13,7 @@ namespace UsefulStuff
         MeshData currentMesh;
         ITexPositionSource blockTexPosSource;
         bool activeCurrent = false;
+        double timer;
 
         public TextureAtlasPosition this[string textureCode]
         {
@@ -44,6 +45,8 @@ namespace UsefulStuff
             sluiceBlocks = api.World.BlockAccessor.GetBlock(new AssetLocation("game:pan-wooden")).Attributes["panningDrops"].AsObject<Dictionary<string, PanningDrop[]>>();
 
             RegisterGameTickListener(updateStep, 3000);
+
+            timer = api.World.Calendar.TotalHours + UsefulStuffConfig.Loaded.SluiceSiftTime;
 
             if (Api.Side == EnumAppSide.Client)
             {
@@ -77,8 +80,9 @@ namespace UsefulStuff
         {
             checkForWater();
 
-            if (activeCurrent && inv[0].Itemstack?.Block?.Attributes?.IsTrue("pannable") == true && Api.Side == EnumAppSide.Server)
+            if (activeCurrent && inv[0].Itemstack?.Block?.Attributes?.IsTrue("pannable") == true && Api.Side == EnumAppSide.Server && timer <= Api.World.Calendar.TotalHours)
             {
+                timer = Api.World.Calendar.TotalHours + UsefulStuffConfig.Loaded.SluiceSiftTime;
                 string fromBlockCode = inv[0].Itemstack.Block.Code.ToShortString();
                 PanningDrop[] drops = null;
                 foreach (var val in sluiceBlocks.Keys)
@@ -106,14 +110,7 @@ namespace UsefulStuff
 
                         double rnd = Api.World.Rand.NextDouble();
 
-                        float extraMul = 1f;
-                        if (drop.DropModbyStat != null)
-                        {
-                            // Sluicing has low efficiency
-                            extraMul = 0.5f;
-                        }
-
-                        float val = drop.Chance.nextFloat() * extraMul;
+                        float val = drop.Chance.nextFloat() * UsefulStuffConfig.Loaded.SluiceEfficiency;
 
                         
                         ItemStack stack;
