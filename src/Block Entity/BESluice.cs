@@ -44,7 +44,7 @@ namespace UsefulStuff
 
             sluiceBlocks = api.World.BlockAccessor.GetBlock(new AssetLocation("game:pan-wooden")).Attributes["panningDrops"].AsObject<Dictionary<string, PanningDrop[]>>();
 
-            RegisterGameTickListener(updateStep, 3000);
+            RegisterGameTickListener(updateStep, 1000);
 
             timer = api.World.Calendar.TotalHours + UsefulStuffConfig.Loaded.SluiceSiftTime;
 
@@ -80,9 +80,10 @@ namespace UsefulStuff
         {
             checkForWater();
 
-            if (activeCurrent && inv[0].Itemstack?.Block?.Attributes?.IsTrue("pannable") == true && Api.Side == EnumAppSide.Server && timer <= Api.World.Calendar.TotalHours)
+            if (Api.Side == EnumAppSide.Server && timer <= Api.World.Calendar.TotalHours)
             {
-                timer = Api.World.Calendar.TotalHours + UsefulStuffConfig.Loaded.SluiceSiftTime;
+                timer += UsefulStuffConfig.Loaded.SluiceSiftTime;
+                if (!activeCurrent || inv[0].Itemstack?.Block?.Attributes?.IsTrue("pannable") != true) return;
                 string fromBlockCode = inv[0].Itemstack.Block.Code.ToShortString();
                 PanningDrop[] drops = null;
                 foreach (var val in sluiceBlocks.Keys)
@@ -110,7 +111,7 @@ namespace UsefulStuff
 
                         double rnd = Api.World.Rand.NextDouble();
 
-                        float val = drop.Chance.nextFloat() * UsefulStuffConfig.Loaded.SluiceEfficiency;
+                        float val = UsefulStuffConfig.Loaded.SluiceEfficiency;
 
                         
                         ItemStack stack;
@@ -134,7 +135,7 @@ namespace UsefulStuff
                     }
                 }
 
-                inv[0].TakeOutWhole();
+                inv[0].TakeOut(1);
             }
         }
 

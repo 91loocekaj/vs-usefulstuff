@@ -1,0 +1,73 @@
+{
+	code: "tentbag",
+	maxstacksize: 1,
+	shape: { base: "game:item/bag/linensack" },
+  class: "Tentbag",
+	textures: {
+		"linen": { base: "item/bag/burlapsack/linen" },
+		"top": { base: "item/bag/burlapsack/top" }
+	},
+  variantgroups: [
+		{code: "type", states: ["empty", "packed"]}
+	],
+	creativeinventory: { "general": ["*-empty"], "items": ["*-empty"] },
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: -25, y: 23, z: 180 },
+		origin: { x: 0.5299, y: 0.23, z: 0.5 },
+		scale: 2.7,
+		rotate: true
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0, z: 0.2 },
+		rotation: { x: 47, y: -80, z: 33 },
+		scale: 1.61
+	},
+	tpHandTransform: {
+		translation: { x: -0.7, y: -0.5, z: -0.6 },
+		rotation: { x: -4, y: 47, z: -17 },
+		scale: 0.81
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 180, y: 33, z: -180 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 2.5
+	},
+	attributes: {
+		size: 3,
+    keepContents: false,
+    emptyBag: "usefulstuff:tentbag-empty",
+    packedBag: "usefulstuff:tentbag-packed",
+		whitelist: false,
+		buildEffort: 100.00,
+		allowedBlocks: [
+			"game:cob-*"
+		],
+    bannedBlocks:
+    [
+      "game:log-grown-*",
+      "game:log-resin-*",
+      "game:log-resinharvested-*",
+      "game:statictranslocator-*",
+      "game:teleporterbase",
+      "game:crop-*",
+      "game:herb-*",
+      "game:mushroom-*",
+      "game:smallberrybush-*",
+      "game:bigberrybush-*",
+      "game:water-*",
+      "game:lava-*",
+      "game:farmland-*",
+			"game:rawclay-*",
+			"game:peat-*",
+			"game:rock-*",
+			"game:ore-*",
+			"game:crock-burned-*",
+			"game:bowl-meal",
+			"game:claypot-cooked",
+			"game:anvil-*",
+			"game:forge"
+    ]
+	}
+}

@@ -5,6 +5,7 @@
     "value": {
       "code": "shield"
     },
-    "file": "game:entities/humanoid/player.json"
+    "file": "game:entities/humanoid/player.json",
+    "condition": { "when": "shieldsEnabled", "isValue": "true" }
   }
 ]

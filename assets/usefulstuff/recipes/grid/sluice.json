@@ -1,5 +1,4 @@
-[
-  {
+{
   	ingredientPattern: "R_S,_SP,SPP",
   	ingredients: {
   		"S": { type: "item", code: "game:stick", quantity: 4 },
@@ -9,5 +8,4 @@
   	width: 3,
   	height: 3,
   	output: { type: "block", code: "usefulstuff:sluice-north"  }
-  },
-]
+  }

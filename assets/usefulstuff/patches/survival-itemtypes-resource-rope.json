@@ -2,7 +2,8 @@
   {
     "op": "replace",
     "path": "/maxstacksize",
-    "value": 64,
-    "file": "game:itemtypes/resource/rope.json"
+    "value": 128,
+    "file": "game:itemtypes/resource/rope.json",
+    "condition": { "when": "climbingRopeEnabled", "isValue": "true" }
   }
 ]

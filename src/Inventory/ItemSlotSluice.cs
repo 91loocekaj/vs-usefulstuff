@@ -6,7 +6,7 @@ namespace UsefulStuff
     {
         public ItemSlotSluice(InventoryGeneric inventory) : base(inventory)
         {
-            MaxSlotStackSize = 1;
+            //MaxSlotStackSize = 1;
         }
 
         public override bool CanTakeFrom(ItemSlot sourceSlot, EnumMergePriority priority = EnumMergePriority.AutoMerge)

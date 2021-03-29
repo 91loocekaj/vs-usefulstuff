@@ -104,7 +104,7 @@ namespace UsefulStuff
                 {
                     downPos.Y--;
                     Block stone = blockAccessor.GetBlock(downPos);
-                    if (stone.CanAttachBlockAt(blockAccessor, this, pos, BlockFacing.UP) && stone.BlockMaterial == EnumBlockMaterial.Stone)
+                    if (stone.CanAttachBlockAt(blockAccessor, this, pos, BlockFacing.UP) && stone.BlockMaterial == EnumBlockMaterial.Stone && downPos.Y < api.World.SeaLevel)
                     {
                         string rocktype;
                         if (stone.Variant.TryGetValue("rock", out rocktype))

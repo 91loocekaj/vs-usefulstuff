@@ -1,0 +1,28 @@
+{
+	code: "glider",
+	maxstacksize: 1,
+	shape: { base: "usefulstuff:item/tool/glider" },
+  class: "ItemGlider",
+	textures: {
+		"fabric": { base: "game:block/cloth/linen/diamond1" },
+		"wood": { base: "game:block/wood/planks/generic" }
+	},
+	creativeinventory: { "general": ["*"], "items": ["*"] },
+	attributes: {
+	},
+  tpHandTransform: {
+  translation: { x: -0.97, y: -0.47, z: -0.38 },
+  rotation: { x: -81, y: 10, z: -94 },
+  scale: 0.91
+},
+guiTransform: {
+  rotation: { x: -162, y: 24, z: 33 },
+  scale: 0.43
+},
+fpHandTransform: {
+  translation: { x: -1.01, y: 0.86, z: 0 },
+  rotation: { x: 0, y: 180, z: 0 },
+  scale: 3.41
+},
+durability: 1000
+}

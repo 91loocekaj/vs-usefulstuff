@@ -1,0 +1,144 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:blocktypes/locusthorde.json",
+    "condition": { "when": "locustHordeEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:itemtypes/tentbag.json",
+    "condition": { "when": "tentbagEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/tentbag.json",
+    "condition": { "when": "tentbagEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:itemtypes/shield.json",
+    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/shields.json",
+    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/1/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/shields.json",
+    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/2/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/shields.json",
+    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/3/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/shields.json",
+    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/4/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/shields.json",
+    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/5/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/shields.json",
+    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:blocktypes/climbingrope.json",
+    "condition": { "when": "climbingRopeEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/ropeanchor.json",
+    "condition": { "when": "climbingRopeEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:itemtypes/climbingpick.json",
+    "condition": { "when": "climbingPickEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/climbingpick.json",
+    "condition": { "when": "climbingPickEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:blocktypes/sluice.json",
+    "condition": { "when": "sluiceEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/sluice.json",
+    "condition": { "when": "sluiceEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:itemtypes/glider.json",
+    "condition": { "when": "gliderEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/glider.json",
+    "condition": { "when": "gliderEnabled", "isValue": "false" }
+  },
+]

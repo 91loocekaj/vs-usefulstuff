@@ -1,0 +1,12 @@
+{
+	ingredientPattern: "SSS,WTW,SPS",
+	ingredients: {
+		"P": { type: "item", code: "game:plank-*"},
+    "S": { type: "item", code: "game:stick", quantity: 2},
+		"T": { type: "item", code: "game:flaxtwine"},
+		"W": { type: "item", code: "game:sail"},
+	},
+	width: 3,
+	height: 3,
+	output: { type: "item", code: "usefulstuff:glider"  }
+}

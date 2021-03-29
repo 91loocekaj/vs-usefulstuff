@@ -3,6 +3,12 @@
   "item-shield-pelt" : "Hide Shield",
   "item-shield-leather" : "Leather Shield",
   "item-shield-linen" : "Composite Shield",
+  "item-tentbag-empty" : "Empty Tent Bag",
+  "item-tentbag-packed" : "Packed Tent Bag",
+  "item-climbingpick-iron" : "Iron Climbing Pick",
+  "item-climbingpick-meteoriciron" : "Meteoric Iron Climbing Pick",
+  "item-climbingpick-steel" : "Steel Climbing Pick",
+  "item-glider" : "Glider",
 
   "block-climbingrope-start-*": "Rope Anchor",
   "block-climbingrope-section-*": "Climbing Rope",
@@ -13,4 +19,9 @@
   "blockhelp-anchor-retract": "Bring Up Rope",
 
   "itemhelp-shield": "Block",
+  "itemhelp-glider-airbrake" : "Airbrake",
+
+  "Cannot pack {0} in a bag!": "Cannot pack {0} in a bag!",
+  "Cannot unpack here, need solid ground!" : "Cannot unpack here, need solid ground!",
+  "Cannot unpack here, need a clear area!" : "Cannot unpack here, need a clear area!",
 }

@@ -75,6 +75,9 @@
     <Compile Include="src\Block\BlockRappelAnchor.cs" />
     <Compile Include="src\Behavior\EntityBehaviorShield.cs" />
     <Compile Include="src\Inventory\ItemSlotSluice.cs" />
+    <Compile Include="src\Item\ItemGlider.cs" />
+    <Compile Include="src\Item\ItemClimbingPick.cs" />
+    <Compile Include="src\Item\ItemTentbag.cs" />
     <Compile Include="src\Item\ItemShield.cs" />
     <Compile Include="src\UsefulStuff.cs" />
   </ItemGroup>
