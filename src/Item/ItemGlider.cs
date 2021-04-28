@@ -50,9 +50,9 @@ namespace UsefulStuff
 
                 //Wind push. Note the wind does not seem fully implemented, only blows postively on X axis
                 Vec3d windSpeed = byEntity.World.BlockAccessor.GetWindSpeedAt(byEntity.SidedPos.AsBlockPos);
-                byEntity.SidedPos.Motion.X += windSpeed.X * UsefulStuffConfig.Loaded.GliderWindPushModifier;
-                byEntity.SidedPos.Motion.Y += windSpeed.Y * UsefulStuffConfig.Loaded.GliderWindPushModifier;
-                byEntity.SidedPos.Motion.Z += windSpeed.Z * UsefulStuffConfig.Loaded.GliderWindPushModifier;
+                //byEntity.SidedPos.Motion.X += windSpeed.X * UsefulStuffConfig.Loaded.GliderWindPushModifier;
+                //byEntity.SidedPos.Motion.Y += windSpeed.Y * UsefulStuffConfig.Loaded.GliderWindPushModifier;
+                //byEntity.SidedPos.Motion.Z += windSpeed.Z * UsefulStuffConfig.Loaded.GliderWindPushModifier * (byEntity.SidedPos.Motion.X < 0 ? -1 : 1);
             }
         }
 

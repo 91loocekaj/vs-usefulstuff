@@ -9,6 +9,8 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.GameContent;
 using Vintagestory.API.Util;
 using System.Collections.Generic;
+using Vintagestory.API.Config;
+using System;
 
 namespace UsefulStuff
 {
@@ -90,6 +92,62 @@ namespace UsefulStuff
         }
     }
 
+    [HarmonyPatch(typeof(EntityPlayer))]
+    [HarmonyPatch("LightHsv", MethodType.Getter)]
+    public class LanternClip
+    {
+        [HarmonyPrepare]
+        static bool Prepare()
+        {
+            return UsefulStuffConfig.Loaded.LanternClipOnEnabled;
+        }
+
+        [HarmonyPostfix]
+        static void Postfix(EntityPlayer __instance, ref byte[] __result)
+        {
+            IInventory backpack = __instance.Player?.InventoryManager.GetInventory(GlobalConstants.backpackInvClassName + "-" + __instance.PlayerUID);
+            if (backpack == null || backpack.Count < 5 || backpack[0].Itemstack?.Collectible.Code.Path.Contains("backpack") != true || backpack[4].Itemstack?.Collectible.Code.Path.Contains("lantern") != true) return;
+
+            byte[] clipon = backpack[4].Itemstack?.Block?.LightHsv;
+            if (clipon == null) return;
+
+            if (__result == null)
+            {
+                __result = clipon;
+                return;
+            }
+
+            float totalval = __result[2] + clipon[2];
+            float t = clipon[2] / totalval;
+
+            __result = new byte[]
+            {
+                    (byte)(clipon[0] * t + __result[0] * (1-t)),
+                    (byte)(clipon[1] * t + __result[1] * (1-t)),
+                    Math.Max(clipon[2], __result[2])
+            };
+        }
+    }
+
+    [HarmonyPatch(typeof(TreeGen))]
+    [HarmonyPatch("GrowTree")]
+    public class TreeGrowth
+    {
+        [HarmonyPrepare]
+        static bool Prepare()
+        {
+            return true;
+        }
+
+        [HarmonyPostfix]
+        static void Prefix(ref float sizeModifier, ref float vineGrowthChance, ref float otherBlockChance)
+        {
+            sizeModifier *= UsefulStuffConfig.Loaded.TreeSizeMult;
+            vineGrowthChance *= UsefulStuffConfig.Loaded.TreeVineMult;
+            otherBlockChance *= UsefulStuffConfig.Loaded.TreeSpecialLogMult;
+        }
+    }
+
     public class UsefulStuffConfig
     {
         public static UsefulStuffConfig Loaded { get; set; } = new UsefulStuffConfig();
@@ -118,6 +176,12 @@ namespace UsefulStuff
 
         public double GliderBackwardsAt { get; set; } = 0.2;
 
+        public float TreeSizeMult { get; set; } = 1;
+
+        public float TreeVineMult { get; set; } = 1;
+
+        public float TreeSpecialLogMult { get; set; } = 1;
+
 
         #region Control Content
 
@@ -134,6 +198,8 @@ namespace UsefulStuff
         public bool TentbagEnabled { get; set; } = true;
 
         public bool GliderEnabled { get; set; } = true;
+
+        public bool LanternClipOnEnabled { get; set; } = true;
         #endregion
     }
 }

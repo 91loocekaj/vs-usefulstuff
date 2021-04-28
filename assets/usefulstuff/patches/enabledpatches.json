@@ -17,7 +17,23 @@
 
   {
     "op": "add",
-    "path": "/enabled",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/tentbag.json",
+    "condition": { "when": "tentbagEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/1/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/tentbag.json",
+    "condition": { "when": "tentbagEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/2/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/tentbag.json",
     "condition": { "when": "tentbagEnabled", "isValue": "false" }

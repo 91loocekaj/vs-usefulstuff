@@ -1,0 +1,101 @@
+[
+  {
+    	ingredientPattern: "KC",
+    	ingredients: {
+        "C": { type: "item", code: "game:clothes-face-*"},
+        "K": { type: "item", code: "game:knife-*", isTool: true}
+    	},
+    	width: 2,
+    	height: 1,
+      shapeless: true,
+    	output: { type: "item", code: "game:flaxtwine", quantity: 1 }
+  },
+  {
+    	ingredientPattern: "KC",
+    	ingredients: {
+        "C": { type: "item", code: "game:clothes-foot-*"},
+        "K": { type: "item", code: "game:knife-*", isTool: true}
+    	},
+    	width: 2,
+    	height: 1,
+      shapeless: true,
+    	output: { type: "item", code: "game:leather", quantity: 1 }
+  },
+  {
+    	ingredientPattern: "KC",
+    	ingredients: {
+        "C": { type: "item", code: "game:clothes-hand-*"},
+        "K": { type: "item", code: "game:knife-*", isTool: true}
+    	},
+    	width: 2,
+    	height: 1,
+      shapeless: true,
+    	output: { type: "item", code: "game:flaxtwine", quantity: 1 }
+  },
+  {
+    	ingredientPattern: "KC",
+    	ingredients: {
+        "C": { type: "item", code: "game:clothes-head-*"},
+        "K": { type: "item", code: "game:knife-*", isTool: true}
+    	},
+    	width: 2,
+    	height: 1,
+      shapeless: true,
+    	output: { type: "item", code: "game:flaxtwine", quantity: 2 }
+  },
+  {
+    	ingredientPattern: "KC",
+    	ingredients: {
+        "C": { type: "item", code: "game:clothes-lowerbody-*"},
+        "K": { type: "item", code: "game:knife-*", isTool: true}
+    	},
+    	width: 2,
+    	height: 1,
+      shapeless: true,
+    	output: { type: "item", code: "game:flaxtwine", quantity: 6 }
+  },
+  {
+    	ingredientPattern: "KC",
+    	ingredients: {
+        "C": { type: "item", code: "game:clothes-upperbody-*"},
+        "K": { type: "item", code: "game:knife-*", isTool: true}
+    	},
+    	width: 2,
+    	height: 1,
+      shapeless: true,
+    	output: { type: "item", code: "game:flaxtwine", quantity: 6 }
+  },
+  {
+    	ingredientPattern: "KC",
+    	ingredients: {
+        "C": { type: "item", code: "game:clothes-shoulder-*"},
+        "K": { type: "item", code: "game:knife-*", isTool: true}
+    	},
+    	width: 2,
+    	height: 1,
+      shapeless: true,
+    	output: { type: "item", code: "game:flaxtwine", quantity: 3 }
+  },
+  {
+    	ingredientPattern: "KC",
+    	ingredients: {
+        "C": { type: "item", code: "game:clothes-upperbodyover-*"},
+        "K": { type: "item", code: "game:knife-*", isTool: true}
+    	},
+    	width: 2,
+    	height: 1,
+      shapeless: true,
+    	output: { type: "item", code: "game:flaxtwine", quantity: 6 }
+  },
+  {
+    	ingredientPattern: "KC",
+    	ingredients: {
+        "C": { type: "item", code: "game:clothes-waist-*"},
+        "K": { type: "item", code: "game:knife-*", isTool: true}
+    	},
+    	width: 2,
+    	height: 1,
+      shapeless: true,
+    	output: { type: "item", code: "game:flaxtwine", quantity: 1 }
+  },
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "op": "add",
+    "path": "/crushingPropsByType/*-andesite",
+    "value": {
+      "crushedStack": {
+        "type": "block",
+        "code": "sand-{rock}",
+        "stacksize": 1
+      },
+      "hardnessTier": 2
+    },
+    "file": "game:itemtypes/resource/stone.json"
+  },
+  {
+    "op": "add",
+    "path": "/crushingPropsByType/*-basalt",
+    "value": {
+      "crushedStack": {
+        "type": "block",
+        "code": "sand-{rock}",
+        "stacksize": 1
+      },
+      "hardnessTier": 2
+    },
+    "file": "game:itemtypes/resource/stone.json"
+  },
+  {
+    "op": "add",
+    "path": "/crushingPropsByType/*-chert",
+    "value": {
+      "crushedStack": {
+        "type": "block",
+        "code": "sand-{rock}",
+        "stacksize": 1
+      },
+      "hardnessTier": 1
+    },
+    "file": "game:itemtypes/resource/stone.json"
+  },
+  {
+    "op": "add",
+    "path": "/crushingPropsByType/*-claystone",
+    "value": {
+      "crushedStack": {
+        "type": "item",
+        "code": "clay-fire",
+        "stacksize": 1
+      },
+      "hardnessTier": 3
+    },
+    "file": "game:itemtypes/resource/stone.json"
+  },
+  {
+    "op": "add",
+    "path": "/crushingPropsByType/*-conglomerate",
+    "value": {
+      "crushedStack": {
+        "type": "block",
+        "code": "sand-{rock}",
+        "stacksize": 1
+      },
+      "hardnessTier": 1
+    },
+    "file": "game:itemtypes/resource/stone.json"
+  },
+  {
+    "op": "add",
+    "path": "/crushingPropsByType/*-granite",
+    "value": {
+      "crushedStack": {
+        "type": "block",
+        "code": "sand-{rock}",
+        "stacksize": 1
+      },
+      "hardnessTier": 2
+    },
+    "file": "game:itemtypes/resource/stone.json"
+  },
+  {
+    "op": "add",
+    "path": "/crushingPropsByType/*-peridotite",
+    "value": {
+      "crushedStack": {
+        "type": "block",
+        "code": "sand-{rock}",
+        "stacksize": 1
+      },
+      "hardnessTier": 2
+    },
+    "file": "game:itemtypes/resource/stone.json"
+  },
+  {
+    "op": "add",
+    "path": "/crushingPropsByType/*-phyllite",
+    "value": {
+      "crushedStack": {
+        "type": "block",
+        "code": "sand-{rock}",
+        "stacksize": 1
+      },
+      "hardnessTier": 1
+    },
+    "file": "game:itemtypes/resource/stone.json"
+  },
+  {
+    "op": "add",
+    "path": "/crushingPropsByType/*-sandstone",
+    "value": {
+      "crushedStack": {
+        "type": "block",
+        "code": "sand-{rock}",
+        "stacksize": 1
+      },
+      "hardnessTier": 1
+    },
+    "file": "game:itemtypes/resource/stone.json"
+  },
+  {
+    "op": "add",
+    "path": "/crushingPropsByType/*-shale",
+    "value": {
+      "crushedStack": {
+        "type": "block",
+        "code": "sand-{rock}",
+        "stacksize": 1
+      },
+      "hardnessTier": 1
+    },
+    "file": "game:itemtypes/resource/stone.json"
+  },
+  {
+    "op": "add",
+    "path": "/crushingPropsByType/*-slate",
+    "value": {
+      "crushedStack": {
+        "type": "block",
+        "code": "sand-{rock}",
+        "stacksize": 1
+      },
+      "hardnessTier": 2
+    },
+    "file": "game:itemtypes/resource/stone.json"
+  }
+]

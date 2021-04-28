@@ -111,14 +111,14 @@ namespace UsefulStuff
 
                         double rnd = Api.World.Rand.NextDouble();
 
-                        float val = UsefulStuffConfig.Loaded.SluiceEfficiency;
+                        float val = UsefulStuffConfig.Loaded.SluiceEfficiency * drop.Chance.nextFloat();
 
                         
                         ItemStack stack;
 
                         if (drops[i].Code.Path.Contains("{rocktype}"))
                         {
-                            stack = Resolve(drops[i].Type, drops[i].Code.Path.Replace("{rocktype}", rocktype));
+                            stack = null;
                         }
                         else
                         {
@@ -214,7 +214,7 @@ namespace UsefulStuff
                 Block block = Api.World.GetBlock(new AssetLocation(code));
                 if (block == null)
                 {
-                    Api.World.Logger.Error("Failed resolving panning block drop with code {0}. Will skip.", code);
+                    //Api.World.Logger.Error("Failed resolving panning block drop with code {0}. Will skip.", code);
                     return null;
                 }
                 return new ItemStack(block);
@@ -225,7 +225,7 @@ namespace UsefulStuff
                 Item item = Api.World.GetItem(new AssetLocation(code));
                 if (item == null)
                 {
-                    Api.World.Logger.Error("Failed resolving panning item drop with code {0}. Will skip.", code);
+                    //Api.World.Logger.Error("Failed resolving panning item drop with code {0}. Will skip.", code);
                     return null;
                 }
                 return new ItemStack(item);

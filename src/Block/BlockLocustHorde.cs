@@ -17,26 +17,31 @@ namespace UsefulStuff
             if (api.Side == EnumAppSide.Server)
             {
                 long herdId = (api as ICoreServerAPI).WorldManager.GetNextUniqueId();
+                EntityProperties enemy = null;
                 if (rnd <= 0.01)
                 {
-                    DoSpawn(world.GetEntityType(new AssetLocation("bell-normal")), pos.ToVec3d().Add(0.5, 0.5, 0.5), herdId);
+                    enemy = world.GetEntityType(new AssetLocation("bell-normal"));
+                    if (enemy != null) DoSpawn(enemy, pos.ToVec3d().Add(0.5, 0.5, 0.5), herdId);
                 }
                 else if (rnd <= 0.05)
                 {
-                    DoSpawn(world.GetEntityType(new AssetLocation("locust-corrupt-sawblade")), pos.ToVec3d().Add(0.5, 0.5, 0.5), herdId);
+                    enemy = world.GetEntityType(new AssetLocation("locust-corrupt-sawblade"));
+                    if (enemy != null) DoSpawn(enemy, pos.ToVec3d().Add(0.5, 0.5, 0.5), herdId);
                 }
                 else if (rnd < 0.50)
                 {
                     for (int i = 0; i < (int)Math.Ceiling(level); i++)
                     {
-                        DoSpawn(world.GetEntityType(new AssetLocation("locust-corrupt")), pos.ToVec3d().Add(0.5, 0.5, 0.5), herdId);
+                        enemy = world.GetEntityType(new AssetLocation("locust-corrupt"));
+                        if (enemy != null) DoSpawn(enemy, pos.ToVec3d().Add(0.5, 0.5, 0.5), herdId);
                     }
                 }
                 else
                 {
                     for (int i = 0; i < (int)Math.Ceiling(level); i++)
                     {
-                        DoSpawn(world.GetEntityType(new AssetLocation("locust-bronze")), pos.ToVec3d().Add(0.5, 0.5, 0.5), herdId);
+                        enemy = world.GetEntityType(new AssetLocation("locust-bronze"));
+                        if (enemy != null) DoSpawn(enemy, pos.ToVec3d().Add(0.5, 0.5, 0.5), herdId);
                     }
                 }
             }

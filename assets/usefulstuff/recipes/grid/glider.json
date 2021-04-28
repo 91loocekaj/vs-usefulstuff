@@ -1,10 +1,11 @@
 {
-	ingredientPattern: "SSS,WTW,SPS",
+	ingredientPattern: "LLL,WTW,SPS",
 	ingredients: {
 		"P": { type: "item", code: "game:plank-*"},
     "S": { type: "item", code: "game:stick", quantity: 2},
 		"T": { type: "item", code: "game:flaxtwine"},
-		"W": { type: "item", code: "game:sail"},
+		"W": { type: "item", code: "game:sail", quantity: 2},
+		"L": { type: "item", code: "game:leather", quantity: 1},
 	},
 	width: 3,
 	height: 3,

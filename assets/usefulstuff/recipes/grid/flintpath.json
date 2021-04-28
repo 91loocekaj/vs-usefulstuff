@@ -1,0 +1,34 @@
+[
+	{
+	ingredientPattern: "L	S",
+	ingredients: {
+		"L": { type: "item", code: "game:flint", quantity: 4 },
+		"S": { type: "block", code: "game:soil-*" }
+	},
+	width: 1,
+	height: 2,
+	output: { type: "block", code: "game:stonepath-free", quantity: 1 }
+},
+{
+	ingredientPattern: "LSL",
+	ingredients: {
+		"L": { type: "item", code: "game:flint", quantity: 1 },
+		"S": { type: "block", code: "game:soil-*" },
+		"L": { type: "item", code: "game:flint", quantity: 1 }
+	},
+	width: 3,
+	height: 1,
+	output: { type: "block", code: "game:stonepathslab-free", quantity: 1 }
+},
+{
+	ingredientPattern: "LM,S_",
+	ingredients: {
+		"L": { type: "item", code: "game:flint", quantity: 3 },
+		"M": { type: "item", code: "game:flint", quantity: 1 },
+		"S": { type: "block", code: "game:soil-*" }
+	},
+	width: 2,
+	height: 2,
+	output: { type: "block", code: "game:stonepathstairs-up-north-free", quantity: 1 }
+}
+]
