@@ -157,4 +157,28 @@
     "file": "usefulstuff:recipes/grid/glider.json",
     "condition": { "when": "gliderEnabled", "isValue": "false" }
   },
+
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/arrowtips.json",
+    "condition": { "when": "explosiveArrowEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/1/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/arrowtips.json",
+    "condition": { "when": "fireArrowEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/2/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/arrowtips.json",
+    "condition": { "when": "beenadeArrowEnabled", "isValue": "false" }
+  },
 ]

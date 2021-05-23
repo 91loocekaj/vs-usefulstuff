@@ -1,6 +1,12 @@
 [
   {
     "op": "add",
+    "path": "/storageFlags",
+    "value": 5,
+    "file": "game:itemtypes/toolhead/sawblade.json"
+  },
+  {
+    "op": "add",
     "path": "/combustiblePropsByType",
     "value": {
       "*-copper": {

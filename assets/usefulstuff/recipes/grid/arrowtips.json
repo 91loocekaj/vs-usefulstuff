@@ -1,0 +1,36 @@
+[
+  {
+		ingredientPattern: "C,A",
+		ingredients: {
+			"C": { type: "block", code: "game:oreblastingbomb" },
+			"A": { type: "item", code: "game:arrow-*", name: "material"}
+		},
+		width: 1,
+		height: 2,
+		shapeless: true,
+		output: { type: "item", code: "game:arrow-{material}", quantity: 1, attributes: {"tip": "explosive"}  }
+	},
+  {
+		ingredientPattern: "TFA",
+		ingredients: {
+			"T": { type: "block", code: "game:torch-up" },
+      "F": { type: "item", code: "game:fat"},
+			"A": { type: "item", code: "game:arrow-*", name: "material"}
+		},
+		width: 3,
+		height: 1,
+		shapeless: true,
+		output: { type: "item", code: "game:arrow-{material}", quantity: 1, attributes: {"tip": "incendiary"}  }
+	},
+  {
+		ingredientPattern: "C,A",
+		ingredients: {
+			"C": { type: "item", code: "game:beenade-closed" },
+			"A": { type: "item", code: "game:arrow-*", name: "material"}
+		},
+		width: 1,
+		height: 2,
+		shapeless: true,
+		output: { type: "item", code: "game:arrow-{material}", quantity: 1, attributes: {"tip": "beenade"}  }
+	},
+]

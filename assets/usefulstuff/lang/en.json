@@ -24,4 +24,8 @@
   "Cannot pack {0} in a bag!": "Cannot pack {0} in a bag!",
   "Cannot unpack here, need solid ground!" : "Cannot unpack here, need solid ground!",
   "Cannot unpack here, need a clear area!" : "Cannot unpack here, need a clear area!",
+
+  "arrowtip-explosive": "Explosive Charge On",
+  "arrowtip-incendiary": "Incendiary",
+  "arrowtip-beenade": "Beenade On"
 }
