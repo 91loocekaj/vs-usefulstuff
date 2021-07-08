@@ -33,14 +33,15 @@ namespace UsefulStuff
             IPlayer byPlayer = (byEntity as EntityPlayer)?.Player;
             if (blockSel == null) return;
             handling = EnumHandHandling.PreventDefault;
-            int size = Attributes["size"].AsInt(3);
+            int size = UsefulStuffConfig.Loaded.TentRadius;
+            int height = UsefulStuffConfig.Loaded.TentHeight;
             string debug = "instatent";
 
             if (slot.Itemstack.Attributes.GetString("tent") == null)
             {
                 BlockSchematic bs = new BlockSchematic();
                 BlockPos start = blockSel.Position.AddCopy(-size, 1, -size);
-                BlockPos end = blockSel.Position.AddCopy(size, Math.Min(size, 3), size);
+                BlockPos end = blockSel.Position.AddCopy(size, Math.Max(height, 3), size);
                 bool canPack = true;
 
                 byEntity.World.BlockAccessor.WalkBlocks(start, end, (block, pos) => {
@@ -61,8 +62,8 @@ namespace UsefulStuff
                         return;
                     }
                     BlockEntity be = byEntity.World.BlockAccessor.GetBlockEntity(pos);
-                    if (!Attributes.IsTrue("keepContents")) (be as BlockEntityContainer)?.Inventory.DropAll(pos.ToVec3d());
-                    if (be is BlockEntityItemPile && !Attributes.IsTrue("keepContents")) byEntity.World.BlockAccessor.BreakBlock(pos, null);
+                    if (!UsefulStuffConfig.Loaded.TentKeepContents) (be as BlockEntityContainer)?.Inventory.DropAll(pos.ToVec3d());
+                    if (be is BlockEntityItemPile && !UsefulStuffConfig.Loaded.TentKeepContents) byEntity.World.BlockAccessor.BreakBlock(pos, null);
                 });
 
                 if (!canPack) return;
@@ -79,12 +80,12 @@ namespace UsefulStuff
                 byEntity.World.BulkBlockAccessor.WalkBlocks(start, end, (block, pos) => { if (block.BlockId != 0) byEntity.World.BulkBlockAccessor.SetBlock(0, pos); });
                 byEntity.World.BulkBlockAccessor.Commit();
                 slot.TakeOutWhole();
-                (byEntity as EntityAgent)?.ReceiveSaturation(-Attributes["buildEffort"].AsFloat(100f));
+                byEntity.ReceiveSaturation(-UsefulStuffConfig.Loaded.TentBuildEffort);
             }
             else
             {
                 BlockPos start = blockSel.Position.AddCopy(-size, 0, -size);
-                BlockPos end = blockSel.Position.AddCopy(size, Math.Min(size, 3), size);
+                BlockPos end = blockSel.Position.AddCopy(size, Math.Max(height, 3), size);
                 bool canPlace = true;
 
                 byEntity.World.BlockAccessor.WalkBlocks(start, end, (block, pos) => 
@@ -105,7 +106,7 @@ namespace UsefulStuff
                         }
                         return;
                     }
-                    if (pos.Y != start.Y && block.BlockId != 0)
+                    if (pos.Y != start.Y && block.Replaceable < 9505)
                     {
                         canPlace = false;
                         if (byEntity.World.Api is ICoreClientAPI capi)
@@ -119,6 +120,7 @@ namespace UsefulStuff
                 if (!canPlace) return;
 
                 BlockSchematic bs = BlockSchematic.LoadFromString(slot.Itemstack.Attributes.GetString("tent"), ref debug);
+                bs.ReplaceMode = EnumReplaceMode.ReplaceAll;
                 start = bs.AdjustStartPos(start.Add(size, 1, size), EnumOrigin.BottomCenter);
 
                 bs.Place(byEntity.World.BulkBlockAccessor, byEntity.World, start);
@@ -127,7 +129,7 @@ namespace UsefulStuff
                 
                 byEntity.World.SpawnItemEntity(empty, blockSel.Position.ToVec3d().Add(0, 1, 0));
                 slot.TakeOutWhole();
-                (byEntity as EntityAgent)?.ReceiveSaturation(-Attributes["buildEffort"].AsFloat(100f));
+                byEntity.ReceiveSaturation(-UsefulStuffConfig.Loaded.TentBuildEffort);
             }
 
         }

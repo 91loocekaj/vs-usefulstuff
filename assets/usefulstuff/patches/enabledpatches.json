@@ -1,18 +1,12 @@
 [
-  {
-    "op": "add",
-    "path": "/enabled",
-    "value": false,
-    "file": "usefulstuff:blocktypes/locusthorde.json",
-    "condition": { "when": "locustHordeEnabled", "isValue": "false" }
-  },
+
 
   {
     "op": "add",
     "path": "/enabled",
     "value": false,
     "file": "usefulstuff:itemtypes/tentbag.json",
-    "condition": { "when": "tentbagEnabled", "isValue": "false" }
+    "condition": { "when": "UStentbagEnabled", "isValue": "false" }
   },
 
   {
@@ -20,7 +14,7 @@
     "path": "/0/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/tentbag.json",
-    "condition": { "when": "tentbagEnabled", "isValue": "false" }
+    "condition": { "when": "UStentbagEnabled", "isValue": "false" }
   },
 
   {
@@ -28,7 +22,7 @@
     "path": "/1/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/tentbag.json",
-    "condition": { "when": "tentbagEnabled", "isValue": "false" }
+    "condition": { "when": "UStentbagEnabled", "isValue": "false" }
   },
 
   {
@@ -36,7 +30,7 @@
     "path": "/2/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/tentbag.json",
-    "condition": { "when": "tentbagEnabled", "isValue": "false" }
+    "condition": { "when": "UStentbagEnabled", "isValue": "false" }
   },
 
   {
@@ -44,7 +38,7 @@
     "path": "/enabled",
     "value": false,
     "file": "usefulstuff:itemtypes/shield.json",
-    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
   },
 
   {
@@ -52,7 +46,7 @@
     "path": "/0/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/shields.json",
-    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
   },
 
   {
@@ -60,7 +54,7 @@
     "path": "/1/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/shields.json",
-    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
   },
 
   {
@@ -68,7 +62,7 @@
     "path": "/2/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/shields.json",
-    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
   },
 
   {
@@ -76,7 +70,7 @@
     "path": "/3/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/shields.json",
-    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
   },
 
   {
@@ -84,7 +78,7 @@
     "path": "/4/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/shields.json",
-    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
   },
 
   {
@@ -92,7 +86,7 @@
     "path": "/5/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/shields.json",
-    "condition": { "when": "shieldsEnabled", "isValue": "false" }
+    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
   },
 
   {
@@ -100,7 +94,7 @@
     "path": "/enabled",
     "value": false,
     "file": "usefulstuff:blocktypes/climbingrope.json",
-    "condition": { "when": "climbingRopeEnabled", "isValue": "false" }
+    "condition": { "when": "USclimbingRopeEnabled", "isValue": "false" }
   },
 
   {
@@ -108,7 +102,7 @@
     "path": "/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/ropeanchor.json",
-    "condition": { "when": "climbingRopeEnabled", "isValue": "false" }
+    "condition": { "when": "USclimbingRopeEnabled", "isValue": "false" }
   },
 
   {
@@ -116,7 +110,7 @@
     "path": "/enabled",
     "value": false,
     "file": "usefulstuff:itemtypes/climbingpick.json",
-    "condition": { "when": "climbingPickEnabled", "isValue": "false" }
+    "condition": { "when": "USclimbingPickEnabled", "isValue": "false" }
   },
 
   {
@@ -124,7 +118,7 @@
     "path": "/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/climbingpick.json",
-    "condition": { "when": "climbingPickEnabled", "isValue": "false" }
+    "condition": { "when": "USclimbingPickEnabled", "isValue": "false" }
   },
 
   {
@@ -132,14 +126,14 @@
     "path": "/enabled",
     "value": false,
     "file": "usefulstuff:blocktypes/sluice.json",
-    "condition": { "when": "sluiceEnabled", "isValue": "false" }
+    "condition": { "when": "USsluiceEnabled", "isValue": "false" }
   },
   {
     "op": "add",
     "path": "/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/sluice.json",
-    "condition": { "when": "sluiceEnabled", "isValue": "false" }
+    "condition": { "when": "USsluiceEnabled", "isValue": "false" }
   },
 
   {
@@ -147,7 +141,7 @@
     "path": "/enabled",
     "value": false,
     "file": "usefulstuff:itemtypes/glider.json",
-    "condition": { "when": "gliderEnabled", "isValue": "false" }
+    "condition": { "when": "USgliderEnabled", "isValue": "false" }
   },
 
   {
@@ -155,7 +149,7 @@
     "path": "/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/glider.json",
-    "condition": { "when": "gliderEnabled", "isValue": "false" }
+    "condition": { "when": "USgliderEnabled", "isValue": "false" }
   },
 
   {
@@ -163,7 +157,7 @@
     "path": "/0/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/arrowtips.json",
-    "condition": { "when": "explosiveArrowEnabled", "isValue": "false" }
+    "condition": { "when": "USexplosiveArrowEnabled", "isValue": "false" }
   },
 
   {
@@ -171,7 +165,7 @@
     "path": "/1/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/arrowtips.json",
-    "condition": { "when": "fireArrowEnabled", "isValue": "false" }
+    "condition": { "when": "USfireArrowEnabled", "isValue": "false" }
   },
 
   {
@@ -179,6 +173,45 @@
     "path": "/2/enabled",
     "value": false,
     "file": "usefulstuff:recipes/grid/arrowtips.json",
-    "condition": { "when": "beenadeArrowEnabled", "isValue": "false" }
+    "condition": { "when": "USbeenadeArrowEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/3/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/arrowtips.json",
+    "condition": { "when": "UScardiacArrowEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/4/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/arrowtips.json",
+    "condition": { "when": "UStranqArrowEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/omnichute.json",
+    "condition": { "when": "USomnichuteEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:blocktypes/firebox.json",
+    "condition": { "when": "USpotKilnEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/firebox.json",
+    "condition": { "when": "USpotKilnEnabled", "isValue": "false" }
   },
 ]

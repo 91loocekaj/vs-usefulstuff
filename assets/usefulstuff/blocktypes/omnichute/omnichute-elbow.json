@@ -1,0 +1,88 @@
+{
+	code: "omnichute",
+	class: "BlockOmniChute",
+  entityclass: "ItemFlow",
+	behaviors: [
+		{ name: "Lockable" }
+	],
+
+	attributes: {
+		"pullFacesByType": {
+			"*-eu": ["up"],
+			"*-wu": ["up"],
+			"*-su": ["up"],
+			"*-nu": ["up"],
+		},
+		"pushFacesByType": {
+			"*-nd": ["down", "north"],
+			"*-sd": ["down", "south"],
+			"*-ed": ["down", "east"],
+			"*-wd": ["down", "west"],
+			"*-ne": ["east", "north"],
+			"*-nw": ["down", "north"],
+			"*-se": ["south", "east"],
+			"*-sw": ["south", "west"],
+		},
+		"acceptFromFacesByType": {
+			"*-eu": ["east"],
+			"*-wu": ["west"],
+			"*-su": ["south"],
+			"*-nu": ["north"],
+			"*-nd": ["north"],
+			"*-sd": ["south"],
+			"*-ed": ["east"],
+			"*-wd": ["west"],
+			"*-ne": ["east", "north"],
+			"*-nw": ["down", "north"],
+			"*-se": ["south", "east"],
+			"*-sw": ["south", "west"],
+		},
+		"item-flowrate": 1,
+		"inventoryClassName": "chute",
+		"quantitySlots": 1,
+		handbook: {
+			groupBy: ["omnichute-*"]
+		}
+	},
+	variantgroups: [
+		{ code: "type", states: ["nu", "su", "eu", "wu", "nd", "sd", "ed", "wd", "ne", "nw", "se", "sw"] }
+	],
+	creativeinventory: { "general": ["omnichute-ns"] },
+	shapebytype: {
+		"*-wu": { base: "game:block/metal/chute/elbow", rotateY: 0 },
+		"*-su": { base: "game:block/metal/chute/elbow", rotateY: 90 },
+		"*-eu": { base: "game:block/metal/chute/elbow", rotateY: 180 },
+		"*-nu": { base: "game:block/metal/chute/elbow", rotateY: 270 },
+		"*-wd": { base: "game:block/metal/chute/elbow", rotateY: 0, rotateZ: 90 },
+		"*-sd": { base: "game:block/metal/chute/elbow", rotateY: 90, rotateZ: 90 },
+		"*-ed": { base: "game:block/metal/chute/elbow", rotateY: 180, rotateZ: 90 },
+		"*-nd": { base: "game:block/metal/chute/elbow", rotateY: 270, rotateZ: 90 },
+		"*-sw": { base: "game:block/metal/chute/elbow", rotateX: 90, rotateZ: 0 },
+		"*-se": { base: "game:block/metal/chute/elbow", rotateX: 90, rotateZ: 270 },
+		"*-ne": { base: "game:block/metal/chute/elbow", rotateX: 90, rotateZ: 180 },
+		"*-nw": { base: "game:block/metal/chute/elbow", rotateX: 90, rotateZ: 90 },
+	},
+	drawtype: "JSON",
+	blockmaterial: "Metal",
+	textures: {
+		all: { base: "game:block/metal/sheet/copper1" },
+	},
+	sidesolid: {
+		all: false
+	},
+	sideopaque: {
+		all: false
+	},
+	replaceable: 160,
+	resistance: 1.75,
+	lightAbsorption: 0,
+	sounds: {
+		"place": "game:block/chute",
+		"break": "game:block/chute",
+		"hit": "game:block/chute",
+		"walk": "game:walk/stone"
+	},
+	guiTransform: {
+		scale: 1.22
+	}
+}

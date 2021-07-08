@@ -35,12 +35,9 @@
 		scale: 2.5
 	},
 	attributes: {
-		size: 3,
-    keepContents: false,
     emptyBag: "usefulstuff:tentbag-empty",
     packedBag: "usefulstuff:tentbag-packed",
 		whitelist: false,
-		buildEffort: 100.00,
 		allowedBlocks: [
 			"game:cob-*"
 		],

@@ -1,0 +1,104 @@
+{
+	code: "omnichute",
+	class: "BlockOmniChute",
+  entityclass: "ItemFlow",
+	behaviors: [
+		{ name: "Lockable" }
+	],
+
+	attributes: {
+		"pullFacesByType": {
+			"*-nseu": ["up"],
+			"*-nswu": ["up"],
+			"*-newu": ["up"],
+			"*-sewu": ["up"],
+			"*-neud": ["up"],
+			"*-nwud": ["up"],
+			"*-seud": ["up"],
+			"*-swud": ["up"],
+		},
+		"pushFacesByType": {
+			"*-nseu": ["north", "south", "east"],
+			"*-nswu": ["north", "south", "west"],
+			"*-newu": ["north", "east", "west"],
+			"*-sewu": ["south", "east", "west"],
+			"*-nsed": ["down", "north", "south", "east"],
+			"*-nswd": ["down", "north", "south", "west"],
+			"*-newd": ["down", "north", "east", "west"],
+			"*-sewd": ["down", "south", "east", "west"],
+			"*-neud": ["down", "east", "north"],
+			"*-nwud": ["down", "north", "west"],
+			"*-seud": ["down", "south", "east"],
+			"*-swud": ["down", "south", "west"],
+		},
+		"acceptFromFacesByType": {
+			"*-nseu": ["north", "south", "east"],
+			"*-nswu": ["north", "south", "west"],
+			"*-newu": ["north", "east", "west"],
+			"*-sewu": ["south", "east", "west"],
+			"*-nsed": ["north", "south", "east"],
+			"*-nswd": ["north", "south", "west"],
+			"*-newd": ["north", "east", "west"],
+			"*-sewd": ["south", "east", "west"],
+			"*-neud": ["east", "north"],
+			"*-nwud": ["north", "west"],
+			"*-seud": ["south", "east"],
+			"*-swud": ["south", "west"],
+		},
+		"item-flowrate": 1,
+		"inventoryClassName": "chute",
+		"quantitySlots": 1,
+		handbook: {
+			groupBy: ["omnichute-*"]
+		}
+	},
+	variantgroups: [
+		{ code: "type", states: ["nseu", "nswu", "newu", "sewu", "nsed", "nswd", "newd", "sewd", "neud", "nwud", "swud", "seud"] }
+	],
+	creativeinventory: { "general": ["omnichute-ns"] },
+	shapebytype: {
+		"*-sewu": { base: "game:block/metal/chute/4way", rotateY: 0 },
+		"*-nseu": { base: "game:block/metal/chute/4way", rotateY: 90 },
+		"*-newu": { base: "game:block/metal/chute/4way", rotateY: 180 },
+		"*-nswu": { base: "game:block/metal/chute/4way", rotateY: 270 },
+
+		"*-sewd": { base: "game:block/metal/chute/4way", rotateZ: 0, rotateX: 90 },
+		"*-nsed": { base: "game:block/metal/chute/4way", rotateZ: 270, rotateX: 90 },
+		"*-newd": { base: "game:block/metal/chute/4way", rotateZ: 180, rotateX: 90 },
+		"*-nswd": { base: "game:block/metal/chute/4way", rotateZ: 90, rotateX: 90 },
+
+		"*-swud": { base: "game:block/metal/chute/4way", rotateZ: 90, rotateY: 0 },
+		"*-seud": { base: "game:block/metal/chute/4way", rotateZ: 90, rotateY: 90 },
+		"*-neud": { base: "game:block/metal/chute/4way", rotateZ: 90, rotateY: 180 },
+		"*-nwud": { base: "game:block/metal/chute/4way", rotateZ: 90, rotateY: 270 },
+	},
+	drawtype: "JSON",
+	blockmaterial: "Metal",
+	textures: {
+		all: { base: "game:block/metal/sheet/copper1" },
+	},
+	sidesolid: {
+		all: false
+	},
+	sideopaque: {
+		all: false
+	},
+	replaceable: 160,
+	resistance: 1.75,
+	lightAbsorption: 0,
+	sounds: {
+		"place": "game:block/chute",
+		"break": "game:block/chute",
+		"hit": "game:block/chute",
+		"walk": "game:walk/stone"
+	},
+
+	collisionselectionboxByType: {
+		"*-ud": { x1: 0.25, y1: 0, z1: 0.25, x2: 0.75, y2: 1, z2: 0.75 },
+		"*-ns": 	{ x1: 0.25, y1: 0.25, z1: 0, x2: 0.75, y2: 0.75, z2: 1 },
+		"*-ew": { x1: 0, y1: 0.25, z1: 0.25, x2: 1, y2: 0.75, z2: 0.75 }
+	},
+	guiTransform: {
+		scale: 1.22
+	}
+}

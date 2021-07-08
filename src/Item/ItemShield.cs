@@ -7,6 +7,11 @@ namespace UsefulStuff
 {
     public class ItemShield : Item
     {
+        public float ShieldTime
+        {
+            get { return Attributes["shieldTime"].AsFloat(120); }
+        }
+
         public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
         {
             base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);

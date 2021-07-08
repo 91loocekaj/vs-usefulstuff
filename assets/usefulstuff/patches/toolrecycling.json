@@ -1,0 +1,413 @@
+[
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/toolhead/shovelhead.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/shovel.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/shovel.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/toolhead/axehead.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/axe-metal.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/axe-metal.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/toolhead/hoehead.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/hoe.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/hoe.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/toolhead/spearhead.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/spear.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/spear.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/toolhead/knifeblade.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/knife.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/knife.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/toolhead/knifeblade.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/knife.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/knife.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 1 }
+    }},
+    "file": "game:itemtypes/toolhead/arrowhead.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 1 }
+    }},
+    "file": "game:itemtypes/tool/arrow.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/toolhead/longblade.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/longblade.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/longblade.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/toolhead/pickaxehead.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/pickaxe.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/pickaxe.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/toolhead/prospectingpickhead.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/prospectingpick.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/prospectingpick.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/toolhead/scythehead.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/scythe.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/scythe.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/toolhead/sawblade.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/saw.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/saw.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/toolhead/hammerhead.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/hammer.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/hammer.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/cleaver.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/cleaver.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/chisel.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{material}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/chisel.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { "@*-(copper|tinbronze|bismuthbronze|blackbronze|iron|meteoriciron|gold|silver|steel)": {
+      "grindedStack": { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    }},
+    "file": "game:itemtypes/tool/shears.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/brokenReturn",
+    "value": [
+      { "type": "item", "code": "game:metalbit-{metal}", "quantity": 10 }
+    ],
+    "file": "game:itemtypes/tool/shears.json",
+    "condition": { "when": "UStoolRecyclingEnabled", "isValue": "true" }
+  },
+]

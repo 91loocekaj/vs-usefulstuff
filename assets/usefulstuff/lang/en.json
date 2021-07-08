@@ -13,7 +13,12 @@
   "block-climbingrope-start-*": "Rope Anchor",
   "block-climbingrope-section-*": "Climbing Rope",
   "block-sluice-*": "Sluice Ramp",
-  "block-locusthorde-*": "Locust Horde",
+  "block-omnichute-*" : "Bendy Chute",
+  "block-firebox-light" : "Firebox(Light)",
+  "block-firebox-dark" : "Firebox(Dark)",
+
+  "blockdesc-omnichute-*" : "A chute that can easily bend to where you need it.",
+
 
   "blockhelp-anchor-deploy": "Deploy Rope",
   "blockhelp-anchor-retract": "Bring Up Rope",
@@ -24,8 +29,15 @@
   "Cannot pack {0} in a bag!": "Cannot pack {0} in a bag!",
   "Cannot unpack here, need solid ground!" : "Cannot unpack here, need solid ground!",
   "Cannot unpack here, need a clear area!" : "Cannot unpack here, need a clear area!",
+  "Quenched" : "Quenched, must be less than 200 degrees to craft with",
 
   "arrowtip-explosive": "Explosive Charge On",
   "arrowtip-incendiary": "Incendiary",
-  "arrowtip-beenade": "Beenade On"
+  "arrowtip-beenade": "Beenade On",
+  "arrowtip-cardiac": "Toxic Coating",
+  "arrowtip-tranq": "Tranquilizer Coating",
+
+  "firebox-burning": "Currently burning",
+  "firebox-full": "Loaded and ready to be lit",
+  "kiln-lock": "Cannot touch this, it is baking!",
 }

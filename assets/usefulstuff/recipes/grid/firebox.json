@@ -1,0 +1,9 @@
+{
+  	ingredientPattern: "BBB,B_B,BBB",
+  	ingredients: {
+  		"B": { type: "block", code: "game:mudbrick-*", quantity: 1, name: "brick" },
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "block", code: "usefulstuff:firebox-{brick}"  }
+  }

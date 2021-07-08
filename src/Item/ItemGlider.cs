@@ -10,6 +10,8 @@ namespace UsefulStuff
         public override void OnHeldIdle(ItemSlot slot, EntityAgent byEntity)
         {
             base.OnHeldIdle(slot, byEntity);
+            //Prevents gliding in caves
+            if (UsefulStuffConfig.Loaded.GliderNoCaveDiving && byEntity.World.BlockAccessor.GetRainMapHeightAt(byEntity.SidedPos.AsBlockPos) > byEntity.SidedPos.Y && byEntity.World.SeaLevel > byEntity.SidedPos.Y) return;
 
             if (!byEntity.OnGround && !byEntity.FeetInLiquid && !byEntity.Controls.IsFlying && !byEntity.Controls.IsClimbing && byEntity.ApplyGravity && byEntity.SidedPos.Motion.Y < 0)
             {
@@ -38,18 +40,33 @@ namespace UsefulStuff
 
                 if (yVector <= UsefulStuffConfig.Loaded.GliderMaxStall && yVector >= UsefulStuffConfig.Loaded.GliderMinStall)
                 {
+
+                    //Every 16x16 block columm is a heat columm
+                    double windBonus = 0;
+                    if ((byEntity.SidedPos.AsBlockPos.X / 16) % 2 == 0 && (byEntity.SidedPos.AsBlockPos.Z / 16) % 2 == 0)
+                    {
+                        windBonus = byEntity.World.BlockAccessor.GetWindSpeedAt(byEntity.SidedPos.AsBlockPos).X * UsefulStuffConfig.Loaded.GliderWindPushModifier;
+                        if (windBonus == 1) windBonus = 1.00001;
+                    }
+
                     //Slows down our fall
                     byEntity.SidedPos.Motion.Y *= Math.Max(0.10, UsefulStuffConfig.Loaded.GliderDescentRModifier + byEntity.SidedPos.Motion.Y);
                     byEntity.SidedPos.Motion.Y += byEntity.SidedPos.Motion.Y * (yVector < 0 ? -yVector : yVector);
+                    byEntity.SidedPos.Motion.Y *= windBonus != 0 ? -1 - 1.8/2 : 1;
 
                     //Gives us a horizontal push forward or backwards
                     Vec3d newVec = byEntity.SidedPos.HorizontalAheadCopy((UsefulStuffConfig.Loaded.GliderBackwardsAt - yVector) * UsefulStuffConfig.Loaded.GliderThrustModifier).XYZ;
                     byEntity.SidedPos.Motion.Z -= byEntity.SidedPos.Z - newVec.Z;
                     byEntity.SidedPos.Motion.X -= byEntity.SidedPos.X - newVec.X;
+                    if (windBonus > 0)
+                    {
+                        byEntity.SidedPos.Motion.Z *= 1 + windBonus / 2;
+                        byEntity.SidedPos.Motion.X *= 1 + windBonus / 2;
+                    }
                 }
 
                 //Wind push. Note the wind does not seem fully implemented, only blows postively on X axis
-                Vec3d windSpeed = byEntity.World.BlockAccessor.GetWindSpeedAt(byEntity.SidedPos.AsBlockPos);
+                //Vec3d windSpeed = byEntity.World.BlockAccessor.GetWindSpeedAt(byEntity.SidedPos.AsBlockPos);
                 //byEntity.SidedPos.Motion.X += windSpeed.X * UsefulStuffConfig.Loaded.GliderWindPushModifier;
                 //byEntity.SidedPos.Motion.Y += windSpeed.Y * UsefulStuffConfig.Loaded.GliderWindPushModifier;
                 //byEntity.SidedPos.Motion.Z += windSpeed.Z * UsefulStuffConfig.Loaded.GliderWindPushModifier * (byEntity.SidedPos.Motion.X < 0 ? -1 : 1);

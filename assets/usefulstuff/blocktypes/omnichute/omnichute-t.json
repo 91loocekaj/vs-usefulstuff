@@ -1,0 +1,94 @@
+{
+	code: "omnichute",
+	class: "BlockOmniChute",
+  entityclass: "ItemFlow",
+	behaviors: [
+		{ name: "Lockable" }
+	],
+
+	attributes: {
+		"pullFacesByType": {
+			"*-nud": ["up"],
+			"*-sud": ["up"],
+			"*-eud": ["up"],
+			"*-wud": ["up"],
+			"*-nsu": ["up"],
+			"*-ewu": ["up"],
+		},
+		"pushFacesByType": {
+			"*-nud": ["down", "north"],
+			"*-sud": ["down", "south"],
+			"*-eud": ["down", "east"],
+			"*-wud": ["down", "west"],
+			"*-nsd": ["down", "north", "south"],
+			"*-nsu": ["north", "south"],
+			"*-nse": ["east", "north", "south"],
+			"*-nsw": ["west", "north", "south"],
+			"*-ewd": ["down", "east", "west"],
+			"*-ewu": ["east", "west"],
+			"*-new": ["north", "east", "west"],
+			"*-sew": ["south", "east", "west"],
+		},
+		"acceptFromFacesByType": {
+			"*-nud": ["north"],
+			"*-sud": ["south"],
+			"*-eud": ["east"],
+			"*-wud": ["west"],
+			"*-nsd": ["north", "south"],
+			"*-nsu": ["north", "south"],
+			"*-nse": ["east", "north", "south"],
+			"*-nsw": ["west", "north", "south"],
+			"*-ewd": ["east", "west"],
+			"*-ewu": ["east", "west"],
+			"*-new": ["north", "east", "west"],
+			"*-sew": ["south", "east", "west"],
+		},
+		"item-flowrate": 1,
+		"inventoryClassName": "chute",
+		"quantitySlots": 1,
+		handbook: {
+			groupBy: ["omnichute-*"]
+		}
+	},
+	variantgroups: [
+		{ code: "type", states: [ "new", "sew", "ewu", "ewd",  "nse", "nsw", "nsu", "nsd",   "nud", "sud", "eud", "wud"] }
+	],
+	creativeinventory: { "general": ["omnichute-ns"] },
+	shapebytype: {
+    "*-nsu": { base: "game:block/metal/chute/t", rotateX: 0, rotateY: 90 },
+		"*-ewu": { base: "game:block/metal/chute/t", rotateX: 0 },
+		"*-ewd": { base: "game:block/metal/chute/t", rotateZ: 180 },
+		"*-nsd": { base: "game:block/metal/chute/t", rotateZ: 180, rotateY: 90 },
+		"*-sew": { base: "game:block/metal/chute/t", rotateX: 90, rotateZ: 0 },
+		"*-nsw": { base: "game:block/metal/chute/t", rotateX: 90, rotateZ: 90 },
+		"*-new": { base: "game:block/metal/chute/t", rotateX: 90, rotateZ: 180 },
+		"*-nse": { base: "game:block/metal/chute/t", rotateX: 90, rotateZ: 270 },
+		"*-wud": { base: "game:block/metal/chute/t", rotateZ: 90, rotateY: 0 },
+		"*-sud": { base: "game:block/metal/chute/t", rotateZ: 90, rotateY: 90 },
+		"*-eud": { base: "game:block/metal/chute/t", rotateZ: 90, rotateY: 180 },
+		"*-nud": { base: "game:block/metal/chute/t", rotateZ: 90, rotateY: 270 },
+	},
+	drawtype: "JSON",
+	blockmaterial: "Metal",
+	textures: {
+		all: { base: "game:block/metal/sheet/copper1" },
+	},
+	sidesolid: {
+		all: false
+	},
+	sideopaque: {
+		all: false
+	},
+	replaceable: 160,
+	resistance: 1.75,
+	lightAbsorption: 0,
+	sounds: {
+		"place": "game:block/chute",
+		"break": "game:block/chute",
+		"hit": "game:block/chute",
+		"walk": "game:walk/stone"
+	},
+	guiTransform: {
+		scale: 1.22
+	}
+}

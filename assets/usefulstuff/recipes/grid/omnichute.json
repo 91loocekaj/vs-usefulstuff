@@ -1,0 +1,10 @@
+  {
+		ingredientPattern: "IGI",
+		ingredients: {
+			"I": { type: "item", code: "game:chutesection-copper" },
+      "G": { type: "item", code: "game:gear-rusty" }
+		},
+		width: 3,
+		height: 1,
+		output: { type: "block", code: "usefulstuff:omnichute-ns"  }
+	}

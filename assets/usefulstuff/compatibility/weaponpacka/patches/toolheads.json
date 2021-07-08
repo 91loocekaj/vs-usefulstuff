@@ -1,0 +1,32 @@
+[
+  {
+    "op": "add",
+    "path": "/class",
+    "value": "ItemToolhead",
+    "file": "weaponpacka:itemtypes/resource/enlongbladehead.json"
+  },
+  {
+    "op": "add",
+    "path": "/class",
+    "value": "ItemToolhead",
+    "file": "weaponpacka:itemtypes/resource/gladiushead.json"
+  },
+  {
+    "op": "add",
+    "path": "/class",
+    "value": "ItemToolhead",
+    "file": "weaponpacka:itemtypes/resource/haleberdhead.json"
+  },
+  {
+    "op": "add",
+    "path": "/class",
+    "value": "ItemToolhead",
+    "file": "weaponpacka:itemtypes/resource/machetehead.json"
+  },
+  {
+    "op": "add",
+    "path": "/class",
+    "value": "ItemToolhead",
+    "file": "weaponpacka:itemtypes/resource/spearhead.json"
+  },
+]

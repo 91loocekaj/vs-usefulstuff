@@ -1,0 +1,75 @@
+{
+	code: "omnichute",
+	class: "BlockOmniChute",
+  entityclass: "ItemFlow",
+	behaviors: [
+		{ name: "Lockable" }
+	],
+
+	attributes: {
+		"pullFacesByType": {
+			"*-nseud": ["up"],
+			"*-nswud": ["up"],
+			"*-newud": ["up"],
+			"*-sewud": ["up"],
+			"*-nsewu": ["up"],
+		},
+		"pushFacesByType": {
+			"*-nseud": ["down", "north", "south", "east"],
+			"*-nswud": ["down", "north", "south", "west"],
+			"*-newud": ["down", "north", "west", "east"],
+			"*-sewud": ["down", "west", "south", "east"],
+			"*-nsewu": ["north", "south", "east", "west"],
+			"*-nsewd": ["down", "north", "south", "east", "west"],
+		},
+		"acceptFromFacesByType": {
+			"*-nseud": [ "north", "south", "east"],
+			"*-nswud": [ "north", "south", "west"],
+			"*-newud": [ "north", "west", "east"],
+			"*-sewud": [ "west", "south", "east"],
+			"*-nsewu": [ "south", "east", "west"],
+			"*-nsewd": [ "north", "south", "east", "west"],
+		},
+		"item-flowrate": 1,
+		"inventoryClassName": "chute",
+		"quantitySlots": 1,
+		handbook: {
+			groupBy: ["omnichute-*"]
+		}
+	},
+	variantgroups: [
+		{ code: "type", states: ["nseud", "nswud", "newud", "sewud", "nsewu", "nsewd"] }
+	],
+	creativeinventory: { "general": ["omnichute-ns"] },
+	shapebytype: {
+		"*-nsewu": { base: "game:block/metal/chute/5way", rotateY: 0 },
+		"*-nswud": { base: "game:block/metal/chute/5way", rotateZ: 90, rotateY: 0 },
+		"*-sewud": { base: "game:block/metal/chute/5way", rotateZ: 90, rotateY: 90 },
+		"*-nseud": { base: "game:block/metal/chute/5way", rotateZ: 90, rotateY: 180 },
+		"*-newud": { base: "game:block/metal/chute/5way", rotateZ: 90, rotateY: 270 },
+		"*-nsewd": { base: "game:block/metal/chute/5way", rotateZ: 180, rotateY: 0 },
+	},
+	drawtype: "JSON",
+	blockmaterial: "Metal",
+	textures: {
+		all: { base: "game:block/metal/sheet/copper1" },
+	},
+	sidesolid: {
+		all: false
+	},
+	sideopaque: {
+		all: false
+	},
+	replaceable: 160,
+	resistance: 1.75,
+	lightAbsorption: 0,
+	sounds: {
+		"place": "game:block/chute",
+		"break": "game:block/chute",
+		"hit": "game:block/chute",
+		"walk": "game:walk/stone"
+	},
+	guiTransform: {
+		scale: 1.22
+	}
+}

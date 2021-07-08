@@ -6,6 +6,6 @@
       "code": "shield"
     },
     "file": "game:entities/humanoid/player.json",
-    "condition": { "when": "shieldsEnabled", "isValue": "true" }
+    "condition": { "when": "USshieldsEnabled", "isValue": "true" }
   }
 ]

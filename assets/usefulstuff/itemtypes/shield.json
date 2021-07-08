@@ -26,6 +26,12 @@
 			translation: { x: 0, y: -0.1, z: 0 },
 			rotation: { x: 90, y: 0, z: 0 },
 			scale: 1.48
+		},
+		shieldTimeByType:{
+			"*-wicker" : 300,
+			"*-pelt" : 180,
+			"*-leather" : 120,
+			"*-linen" : 90
 		}
 	},
 	shape: { base: "item/tool/buckler" },

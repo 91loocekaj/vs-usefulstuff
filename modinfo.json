@@ -4,7 +4,7 @@
   "name": "Useful Stuff",
   "author": "jakecool19",
   "description": "Adds shields, climbing rope, etc.",
-  "version": "1.7.1",
+  "version": "2.0.0",
   "dependency": {
     "game": ""
   }

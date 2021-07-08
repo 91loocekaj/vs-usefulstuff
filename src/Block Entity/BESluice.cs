@@ -101,7 +101,7 @@ namespace UsefulStuff
 
                 string rocktype = Api.World.GetBlock(new AssetLocation(fromBlockCode))?.Variant["rock"];
 
-                for (int l = 0; l < 8; l++)
+                for (int l = 0; l < UsefulStuffConfig.Loaded.SluiceSiftPerBlock; l++)
                 {
                     drops.Shuffle(Api.World.Rand);
 

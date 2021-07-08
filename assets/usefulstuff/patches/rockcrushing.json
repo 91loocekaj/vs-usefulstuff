@@ -10,7 +10,8 @@
       },
       "hardnessTier": 2
     },
-    "file": "game:itemtypes/resource/stone.json"
+    "file": "game:itemtypes/resource/stone.json",
+    "condition": { "when": "USrockCrushingEnabled", "isValue": "true" }
   },
   {
     "op": "add",
@@ -23,7 +24,8 @@
       },
       "hardnessTier": 2
     },
-    "file": "game:itemtypes/resource/stone.json"
+    "file": "game:itemtypes/resource/stone.json",
+    "condition": { "when": "USrockCrushingEnabled", "isValue": "true" }
   },
   {
     "op": "add",
@@ -36,7 +38,8 @@
       },
       "hardnessTier": 1
     },
-    "file": "game:itemtypes/resource/stone.json"
+    "file": "game:itemtypes/resource/stone.json",
+    "condition": { "when": "USrockCrushingEnabled", "isValue": "true" }
   },
   {
     "op": "add",
@@ -49,7 +52,8 @@
       },
       "hardnessTier": 3
     },
-    "file": "game:itemtypes/resource/stone.json"
+    "file": "game:itemtypes/resource/stone.json",
+    "condition": { "when": "USrockCrushingEnabled", "isValue": "true" }
   },
   {
     "op": "add",
@@ -62,7 +66,8 @@
       },
       "hardnessTier": 1
     },
-    "file": "game:itemtypes/resource/stone.json"
+    "file": "game:itemtypes/resource/stone.json",
+    "condition": { "when": "USrockCrushingEnabled", "isValue": "true" }
   },
   {
     "op": "add",
@@ -75,7 +80,8 @@
       },
       "hardnessTier": 2
     },
-    "file": "game:itemtypes/resource/stone.json"
+    "file": "game:itemtypes/resource/stone.json",
+    "condition": { "when": "USrockCrushingEnabled", "isValue": "true" }
   },
   {
     "op": "add",
@@ -88,7 +94,8 @@
       },
       "hardnessTier": 2
     },
-    "file": "game:itemtypes/resource/stone.json"
+    "file": "game:itemtypes/resource/stone.json",
+    "condition": { "when": "USrockCrushingEnabled", "isValue": "true" }
   },
   {
     "op": "add",
@@ -101,7 +108,8 @@
       },
       "hardnessTier": 1
     },
-    "file": "game:itemtypes/resource/stone.json"
+    "file": "game:itemtypes/resource/stone.json",
+    "condition": { "when": "USrockCrushingEnabled", "isValue": "true" }
   },
   {
     "op": "add",
@@ -114,7 +122,8 @@
       },
       "hardnessTier": 1
     },
-    "file": "game:itemtypes/resource/stone.json"
+    "file": "game:itemtypes/resource/stone.json",
+    "condition": { "when": "USrockCrushingEnabled", "isValue": "true" }
   },
   {
     "op": "add",
@@ -127,7 +136,8 @@
       },
       "hardnessTier": 1
     },
-    "file": "game:itemtypes/resource/stone.json"
+    "file": "game:itemtypes/resource/stone.json",
+    "condition": { "when": "USrockCrushingEnabled", "isValue": "true" }
   },
   {
     "op": "add",
@@ -140,6 +150,7 @@
       },
       "hardnessTier": 2
     },
-    "file": "game:itemtypes/resource/stone.json"
+    "file": "game:itemtypes/resource/stone.json",
+    "condition": { "when": "USrockCrushingEnabled", "isValue": "true" }
   }
 ]

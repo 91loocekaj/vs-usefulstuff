@@ -33,4 +33,29 @@
 		shapeless: true,
 		output: { type: "item", code: "game:arrow-{material}", quantity: 1, attributes: {"tip": "beenade"}  }
 	},
+  {
+		ingredientPattern: "L_M,_A_,_R_",
+		ingredients: {
+			"R": { type: "item", code: "game:resin" },
+			"A": { type: "item", code: "game:arrow-*", name: "material"},
+      "L": { type: "block", code: "game:flower-lilyofthevalley-*" },
+      "M": { type: "block", code: "game:mushroom-flyagaric-*" },
+		},
+		width: 3,
+		height: 3,
+		shapeless: true,
+		output: { type: "item", code: "game:arrow-{material}", quantity: 1, attributes: {"tip": "cardiac"}  }
+	},
+  {
+		ingredientPattern: "FAR",
+		ingredients: {
+			"R": { type: "item", code: "game:resin" },
+			"A": { type: "item", code: "game:arrow-*", name: "material"},
+      "F": { type: "block", code: "game:flower-*", allowedVariants : ["catmint-free", "californiapoppy-free"] },
+		},
+		width: 3,
+		height: 1,
+		shapeless: true,
+		output: { type: "item", code: "game:arrow-{material}", quantity: 1, attributes: {"tip": "tranq"}  }
+	},
 ]

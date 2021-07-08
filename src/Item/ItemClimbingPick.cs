@@ -1,12 +1,34 @@
-﻿using Vintagestory.API.Common;
+﻿using System.Collections.Generic;
+using Vintagestory.API.Common;
+using Vintagestory.API.Server;
+using Vintagestory.GameContent;
 
 namespace UsefulStuff
 {
     public class ItemClimbingPick : Item
     {
+        EntityPartitioning entityUtil;
+
         public override void OnHeldIdle(ItemSlot slot, EntityAgent byEntity)
         {
             base.OnHeldIdle(slot, byEntity);
+
+            if (UsefulStuffConfig.Loaded.ClimbingPickDisabledInProtected)
+            {
+                bool bossnear = false;
+                entityUtil.WalkEntities(byEntity.SidedPos.XYZ, 30, (e) =>
+                {
+                    if (e.Properties.Attributes.IsTrue("isBoss"))
+                    {
+                        bossnear = true;
+                        return false;
+                    }
+
+                    return true;
+                });
+
+                if (bossnear) return;
+            }
 
             int dur = slot.Itemstack.Attributes.GetInt("climbingDur");
             
@@ -28,6 +50,12 @@ namespace UsefulStuff
                 byEntity.LeftHandItemSlot.Itemstack.TempAttributes.SetLong("handler", api.World.RegisterCallback((dt) => byEntity.Properties.CanClimbAnywhere = false, 100));
                 byEntity.Properties.CanClimbAnywhere = true;
             }
+        }
+
+        public override void OnLoaded(ICoreAPI api)
+        {
+            base.OnLoaded(api);
+            entityUtil = api.ModLoader.GetModSystem<EntityPartitioning>();
         }
     }
 }

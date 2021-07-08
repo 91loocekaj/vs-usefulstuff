@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>usefulstuff</RootNamespace>
     <AssemblyName>usefulstuff</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,6 +36,10 @@
     <Reference Include="0Harmony, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\jakec\AppData\Roaming\Vintagestory\Lib\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.1.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\jakec\AppData\Roaming\Vintagestory\Lib\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,15 +75,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Block Entity\BESluice.cs" />
-    <Compile Include="src\Block\BlockLocustHorde.cs" />
+    <Compile Include="src\Block Entity\BlockEntityFireBox.cs" />
+    <Compile Include="src\Block\BlockFireBox.cs" />
+    <Compile Include="src\Block\BlockOmniChute.cs" />
     <Compile Include="src\Block\BlockClimbingRope.cs" />
     <Compile Include="src\Block\BlockRappelAnchor.cs" />
     <Compile Include="src\Behavior\EntityBehaviorShield.cs" />
+    <Compile Include="src\BuffStuff.cs" />
+    <Compile Include="src\Effects.cs" />
     <Compile Include="src\Inventory\ItemSlotSluice.cs" />
+    <Compile Include="src\Item\ItemToolhead.cs" />
     <Compile Include="src\Item\ItemGlider.cs" />
     <Compile Include="src\Item\ItemClimbingPick.cs" />
     <Compile Include="src\Item\ItemTentbag.cs" />
     <Compile Include="src\Item\ItemShield.cs" />
+    <Compile Include="src\Patches.cs" />
     <Compile Include="src\UsefulStuff.cs" />
   </ItemGroup>
   <ItemGroup>
