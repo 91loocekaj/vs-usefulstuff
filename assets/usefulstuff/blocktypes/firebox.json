@@ -5,6 +5,10 @@
 	attributes: {
     fuelTypes: {
       "firewood" : 32,
+			"charcoal" : 8,
+			"ore-bituminouscoal" : 8,
+			"ore-lignite" : 8,
+			"peatbrick" : 16
     },
   multiblockStructure: {
 	blockNumbers: {

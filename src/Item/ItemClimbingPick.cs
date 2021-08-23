@@ -13,12 +13,14 @@ namespace UsefulStuff
         {
             base.OnHeldIdle(slot, byEntity);
 
+            if (!(byEntity.LeftHandItemSlot.Itemstack?.Collectible is ItemClimbingPick && byEntity.RightHandItemSlot.Itemstack?.Collectible is ItemClimbingPick)) return;
+
             if (UsefulStuffConfig.Loaded.ClimbingPickDisabledInProtected)
             {
                 bool bossnear = false;
-                entityUtil.WalkEntities(byEntity.SidedPos.XYZ, 30, (e) =>
+                entityUtil?.WalkEntities(byEntity.SidedPos.XYZ, 30, (e) =>
                 {
-                    if (e.Properties.Attributes.IsTrue("isBoss"))
+                    if (e?.Properties?.Attributes?.IsTrue("isBoss") == true)
                     {
                         bossnear = true;
                         return false;
@@ -31,7 +33,7 @@ namespace UsefulStuff
             }
 
             int dur = slot.Itemstack.Attributes.GetInt("climbingDur");
-            
+
 
             if (byEntity.Properties.CanClimbAnywhere && byEntity.Controls.IsClimbing)
             {
@@ -43,13 +45,11 @@ namespace UsefulStuff
                 slot.Itemstack.Attributes.SetInt("climbingDur", dur + 1);
             }
 
-            if (byEntity.LeftHandItemSlot.Itemstack?.Collectible is ItemClimbingPick && byEntity.RightHandItemSlot.Itemstack?.Collectible is ItemClimbingPick)
-            {
-                long handler = byEntity.LeftHandItemSlot.Itemstack.TempAttributes.GetLong("handler");
-                if (handler != 0) api.World.UnregisterCallback(handler);
-                byEntity.LeftHandItemSlot.Itemstack.TempAttributes.SetLong("handler", api.World.RegisterCallback((dt) => byEntity.Properties.CanClimbAnywhere = false, 100));
-                byEntity.Properties.CanClimbAnywhere = true;
-            }
+
+            long handler = byEntity.LeftHandItemSlot.Itemstack.TempAttributes.GetLong("handler");
+            if (handler != 0) api.World.UnregisterCallback(handler);
+            byEntity.LeftHandItemSlot.Itemstack.TempAttributes.SetLong("handler", api.World.RegisterCallback((dt) => byEntity.Properties.CanClimbAnywhere = false, 100));
+            byEntity.Properties.CanClimbAnywhere = true;
         }
 
         public override void OnLoaded(ICoreAPI api)

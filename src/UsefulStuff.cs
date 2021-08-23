@@ -7,7 +7,6 @@ using Vintagestory.API.Server;
 using ProtoBuf;
 using BuffStuff;
 using Vintagestory.API.Client;
-using System.IO;
 using HarmonyLib;
 
 namespace UsefulStuff
@@ -50,6 +49,7 @@ namespace UsefulStuff
             api.World.Config.SetBool("USclothesRecyclingEnabled", UsefulStuffConfig.Loaded.ClothesRecyclingEnabled);
             api.World.Config.SetBool("USrockCrushingEnabled", UsefulStuffConfig.Loaded.RockCrushingEnabled);
             api.World.Config.SetBool("USpotKilnEnabled", UsefulStuffConfig.Loaded.PotKilnEnabled);
+            api.World.Config.SetBool("USshearDecorEnabled", UsefulStuffConfig.Loaded.ShearDecorEnabled);
         }
 
         public override void Start(ICoreAPI api)
@@ -65,13 +65,17 @@ namespace UsefulStuff
             api.RegisterBlockClass("BlockClimbingRope", typeof(BlockClimbingRope));
             api.RegisterBlockClass("BlockOmniChute", typeof(BlockOmniChute));
             api.RegisterBlockClass("BlockFireBox", typeof(BlockFireBox));
+            api.RegisterBlockClass("BlockNameTag", typeof(BlockNameTag));
 
             api.RegisterBlockEntityClass("BESluice", typeof(BESluice));
             api.RegisterBlockEntityClass("FireBox", typeof(BlockEntityFireBox));
+            api.RegisterBlockEntityClass("NameTag", typeof(BlockEntityNameTag));
 
             api.RegisterEntityBehaviorClass("shield", typeof(EntityBehaviorShield));
 
             api.RegisterItemClass("ItemClimbingPick", typeof(ItemClimbingPick));
+
+            api.RegisterCollectibleBehaviorClass("RemoveDecor", typeof(CollectibleBehaviorRemoveDecor));
 
             harmony = new Harmony("com.jakecool19.usefulstuff.enhancements");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
@@ -219,6 +223,27 @@ namespace UsefulStuff
         public bool ToolRecyclingEnabled { get; set; } = true;
 
         public bool ClothesRecyclingEnabled { get; set; } = true;
+
+        public bool ShearDecorEnabled { get; set; } = true;
         #endregion
+    }
+
+    public class CollectibleBehaviorRemoveDecor : CollectibleBehavior
+    {
+        public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling, ref EnumHandling handling)
+        {
+            base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handHandling, ref handling);
+
+            handHandling = EnumHandHandling.PreventDefault;
+            if (blockSel != null && byEntity.World.BlockAccessor.GetDecors(blockSel.Position)[blockSel.Face.Index] != null)
+            {
+                byEntity.World.BlockAccessor.BreakDecor(blockSel.Position, blockSel.Face);
+                byEntity.World.BlockAccessor.MarkChunkDecorsModified(blockSel.Position);
+            }
+        }
+
+        public CollectibleBehaviorRemoveDecor(CollectibleObject collObj) : base(collObj)
+        {
+        }
     }
 }

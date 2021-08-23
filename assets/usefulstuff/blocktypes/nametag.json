@@ -1,0 +1,71 @@
+{
+	code: "nametag",
+	classByType: {
+		"*-burned": "BlockNameTag",
+	},
+	behaviorsByType: {
+		"*-raw": [
+			{ name: "GroundStorable", properties: { layout: 'Quadrants', placeRemoveSound: 'sounds/player/build',	collisionBox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.3125, z2: 1 } } },
+			{ name: "Unplaceable" }
+		],
+		"*": [{name: "UnstableFalling"}, { name: "RightClickPickup"}, { name: "SneakPlacing"}],
+	},
+
+	variantgroups: [
+		{ code:"state", states: ["raw", "burned"] },
+	],
+	entityClassByType: {
+		"*-burned": "NameTag",
+	},
+	combustiblePropsByType: {
+		"*-raw": {
+			meltingPoint: 600,
+			meltingDuration: 45,
+			smeltedRatio: 1,
+			smeltingType: "fire",
+			smeltedStack: { type: "block", code: "usefulstuff:nametag-burned" },
+			requiresContainer: false
+		}
+	},
+	blockmaterial: "Ceramic",
+	creativeinventory: { "general": ["*"], "construction": ["*"] },
+	replaceable: 1200,
+	resistance: 1.5,
+	maxStackSize: 1,
+	lightAbsorption: 0,
+	texturesByType: {
+		"*-raw": {  all: { base: "game:block/clay/blueclay" } },
+		"*-burned": {  all: { base: "game:block/clay/ceramic" } },
+	},
+	shape: { base: "usefulstuff:block/clay/nametag" },
+	sounds: {
+		walk: "game:walk/stone",
+	},
+	sideopaque: {
+		all: false
+	},
+	sidesolid: {
+		all: false
+	},
+	selectionBox: { x1: 0.25, y1: 0, z1: 0.375, x2: 0.75, y2: 0.0625, z2: 0.625 },
+	guiTransform: {
+	translation: { x: 3, y: -16, z: 0 },
+	rotation: { x: -56, y: 26, z: -7 },
+	scale: 2.45
+},
+fpHandTransform: {
+	translation: { x: 0, y: -0.25, z: 0.5 },
+	rotation: { x: 0, y: 0, z: 94 },
+	scale: 1.52
+},
+groundTransform: {
+	translation: { x: 0, y: 0, z: 0 },
+	rotation: { x: 0, y: -45, z: 0 },
+	origin: { x: 0.5, y: 0, z: 0.5 },
+	scale: 3
+},
+tpHandTransform: {
+	translation: { x: -1.72, y: -0.98, z: -1.49 },
+	scale: 0.37
+}
+}

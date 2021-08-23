@@ -1,0 +1,11 @@
+{
+	ingredient: { type: "item", code: "game:clay-*", name: "type", allowedVariants: ["blue", "fire"] },
+	pattern: [[
+		"########",
+    "#_######",
+    "########",
+    "########",
+	],],
+	name: "Tablet",
+	output: { type: "block", code: "usefulstuff:nametag-raw"  }
+}

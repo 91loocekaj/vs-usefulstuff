@@ -63,7 +63,7 @@ namespace UsefulStuff
                     }
                     BlockEntity be = byEntity.World.BlockAccessor.GetBlockEntity(pos);
                     if (!UsefulStuffConfig.Loaded.TentKeepContents) (be as BlockEntityContainer)?.Inventory.DropAll(pos.ToVec3d());
-                    if (be is BlockEntityItemPile && !UsefulStuffConfig.Loaded.TentKeepContents) byEntity.World.BlockAccessor.BreakBlock(pos, null);
+                    if ((be is BlockEntityGroundStorage || be is BlockEntityItemPile) && !UsefulStuffConfig.Loaded.TentKeepContents) byEntity.World.BlockAccessor.BreakBlock(pos, null);
                 });
 
                 if (!canPack) return;
@@ -74,6 +74,7 @@ namespace UsefulStuff
                 bs.Pack(byEntity.World, start);
                 ItemStack packed = new ItemStack(byEntity.World.GetItem(new AssetLocation(Attributes["packedBag"].AsString("usefulstuff:tentbag-packed"))), slot.StackSize);
                 packed.Attributes.SetString("tent", bs.ToJson());
+                if (slot.Itemstack.Attributes.GetString("nametagName") != null) packed.Attributes.SetString("nametagName", slot.Itemstack.Attributes.GetString("nametagName"));
                 byEntity.World.SpawnItemEntity(packed, blockSel.Position.ToVec3d().Add(0, 1, 0));
 
                 end.Add(-1, -1, -1);
@@ -122,11 +123,11 @@ namespace UsefulStuff
                 BlockSchematic bs = BlockSchematic.LoadFromString(slot.Itemstack.Attributes.GetString("tent"), ref debug);
                 bs.ReplaceMode = EnumReplaceMode.ReplaceAll;
                 start = bs.AdjustStartPos(start.Add(size, 1, size), EnumOrigin.BottomCenter);
-
                 bs.Place(byEntity.World.BulkBlockAccessor, byEntity.World, start);
                 byEntity.World.BulkBlockAccessor.Commit();
+                bs.PlaceEntitiesAndBlockEntities(byEntity.World.BlockAccessor, byEntity.World, start);
                 ItemStack empty = new ItemStack(byEntity.World.GetItem(new AssetLocation(Attributes["emptyBag"].AsString("usefulstuff:tentbag-empty"))), slot.StackSize);
-                
+                if (slot.Itemstack.Attributes.GetString("nametagName") != null) empty.Attributes.SetString("nametagName", slot.Itemstack.Attributes.GetString("nametagName"));
                 byEntity.World.SpawnItemEntity(empty, blockSel.Position.ToVec3d().Add(0, 1, 0));
                 slot.TakeOutWhole();
                 byEntity.ReceiveSaturation(-UsefulStuffConfig.Loaded.TentBuildEffort);

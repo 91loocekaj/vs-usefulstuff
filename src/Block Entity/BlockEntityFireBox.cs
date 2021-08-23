@@ -73,6 +73,7 @@ namespace UsefulStuff
             {
                 Lit = false;
                 firing = new bool[18];
+                ambientSound?.Stop();
                 return;
             }
 
@@ -94,6 +95,7 @@ namespace UsefulStuff
             Lit = false;
             inv[0].Itemstack = null;
             int shouldFire = 0;
+            ambientSound?.Stop();
 
             BlockPos tmpPos = Pos.Copy();
 
@@ -156,7 +158,9 @@ namespace UsefulStuff
                 int amount = 0;
                 if (hand.Itemstack != null && (amount = GetFuelAmount(hand.Itemstack.Collectible.Code.Path)) > 0 && hand.StackSize >= amount)
                 {
+                    System.Diagnostics.Debug.WriteLine(amount);
                     inv[0].Itemstack = hand.TakeOut(amount);
+                    hand.MarkDirty();
                     inv[0].MarkDirty();
                     MarkDirty(true);
                 }
@@ -238,6 +242,7 @@ namespace UsefulStuff
             base.OnBlockRemoved();
             if (Api.Side == EnumAppSide.Client)
             {
+                ambientSound?.Stop();
                 ms?.ClearHighlights(Api.World, (Api as ICoreClientAPI).World.Player);
             }
         }

@@ -261,7 +261,7 @@ namespace UsefulStuff
     }
 
     [HarmonyPatch(typeof(CollectibleObject))]
-    public class DamageBits
+    public class CollectiblePatches
     {
         [HarmonyPrepare]
         static bool Prepare(MethodBase original, Harmony harmony)
@@ -299,6 +299,41 @@ namespace UsefulStuff
                     world.SpawnItemEntity(stacks[randomItem].ResolvedItemstack.Clone(), byEntity.ServerPos.XYZ);
                 }
             }
+        }
+
+        [HarmonyPatch("GetHeldItemName")]
+        [HarmonyPostfix]
+        static void NameTagName(ItemStack itemStack, ref string __result)
+        {
+            string nametag = itemStack.Attributes?.GetString("nametagName");
+            if (nametag != null) __result = nametag;
+        }
+    }
+
+    [HarmonyPatch(typeof(Entity))]
+    public class EntityPatches
+    {
+        [HarmonyPrepare]
+        static bool Prepare(MethodBase original, Harmony harmony)
+        {
+            //From Melchoir
+            if (original != null)
+            {
+                foreach (var patched in harmony.GetPatchedMethods())
+                {
+                    if (patched.Name == original.Name) return false;
+                }
+            }
+
+            return true;
+        }
+
+        [HarmonyPatch("GetName")]
+        [HarmonyPostfix]
+        static void NameTagName(Entity __instance, ref string __result)
+        {
+            string nametag = __instance.WatchedAttributes.GetString("nametagName");
+            if (nametag != null) __result = nametag;
         }
     }
 

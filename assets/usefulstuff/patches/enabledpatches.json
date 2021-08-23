@@ -214,4 +214,12 @@
     "file": "usefulstuff:recipes/grid/firebox.json",
     "condition": { "when": "USpotKilnEnabled", "isValue": "false" }
   },
+
+  {
+    "op": "add",
+    "path": "/behaviors",
+    "value": [{"name": "RemoveDecor"}],
+    "file": "game:itemtypes/tool/shears.json",
+    "condition": { "when": "USshearDecornabled", "isValue": "false" }
+  }
 ]

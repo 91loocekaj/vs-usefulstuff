@@ -76,6 +76,8 @@
   <ItemGroup>
     <Compile Include="src\Block Entity\BESluice.cs" />
     <Compile Include="src\Block Entity\BlockEntityFireBox.cs" />
+    <Compile Include="src\Block Entity\BlockEntityNameTag.cs" />
+    <Compile Include="src\Block\BlockNameTag.cs" />
     <Compile Include="src\Block\BlockFireBox.cs" />
     <Compile Include="src\Block\BlockOmniChute.cs" />
     <Compile Include="src\Block\BlockClimbingRope.cs" />

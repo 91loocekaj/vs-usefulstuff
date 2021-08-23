@@ -1,6 +1,7 @@
 ﻿using Vintagestory.API.Common;
 using Vintagestory.API.Client;
 using Vintagestory.API.MathTools;
+using System.Collections.Generic;
 
 namespace UsefulStuff
 {
@@ -12,12 +13,25 @@ namespace UsefulStuff
         {
             base.OnLoaded(api);
 
+            List<ItemStack> fuel = new List<ItemStack>();
+
+            Dictionary<string, int> fuelCodes = Attributes["fuelTypes"].AsObject<Dictionary<string, int>>();
+
+            if (fuelCodes != null && fuelCodes.Count > 0)
+            {
+                foreach (var val in fuelCodes)
+                {
+                    CollectibleObject fuelItem = api.World.GetItem(new AssetLocation(val.Key)) ?? api.World.GetBlock(new AssetLocation(val.Key)) as CollectibleObject;
+                    if (fuelItem != null) fuel.Add(new ItemStack(fuelItem, val.Value));
+                }
+            }
+
             interactions = new WorldInteraction[][]
         {
             new WorldInteraction[] { new WorldInteraction()
             {
                 MouseButton = EnumMouseButton.Right,
-                Itemstacks = new ItemStack[] { new ItemStack(api.World.GetItem(new AssetLocation("firewood")), 32) },
+                Itemstacks = fuel.ToArray(),
                 ActionLangCode = "blockhelp-bloomery-fuel"
             }},
             new WorldInteraction[] { new WorldInteraction()
