@@ -8,8 +8,8 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"fabric": "block/cloth/linen/diamond1",
-		"wood": "block/wood/planks/generic"
+		"fabric": "game:block/cloth/linen/diamond1",
+		"wood": "game:block/wood/planks/generic"
 	},
 	"elements": [
 		{
