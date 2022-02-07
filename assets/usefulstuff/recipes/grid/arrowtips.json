@@ -13,7 +13,7 @@
   {
 		ingredientPattern: "TFA",
 		ingredients: {
-			"T": { type: "block", code: "game:torch-up" },
+			"T": { type: "block", code: "game:torch-basic-lit-up" },
       "F": { type: "item", code: "game:fat"},
 			"A": { type: "item", code: "game:arrow-*", name: "material"}
 		},
@@ -39,7 +39,7 @@
 			"R": { type: "item", code: "game:resin" },
 			"A": { type: "item", code: "game:arrow-*", name: "material"},
       "L": { type: "block", code: "game:flower-lilyofthevalley-*" },
-      "M": { type: "block", code: "game:mushroom-flyagaric-*" },
+      "M": { type: "block", code: "game:mushroom-*", allowedVariants: ["deathcap", "funeralbell"] },
 		},
 		width: 3,
 		height: 3,

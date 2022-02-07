@@ -19,7 +19,7 @@
     	width: 2,
     	height: 1,
       shapeless: true,
-    	output: { type: "item", code: "game:leather", quantity: 1 }
+    	output: { type: "item", code: "game:leather-plain", quantity: 1 }
   },
   {
     	ingredientPattern: "KC",

@@ -2,12 +2,12 @@
 using Vintagestory.API.Common;
 using System.Reflection;
 using Vintagestory.ServerMods;
-using System;
 using Vintagestory.API.Server;
 using ProtoBuf;
 using BuffStuff;
 using Vintagestory.API.Client;
 using HarmonyLib;
+using Vintagestory.API.Util;
 
 namespace UsefulStuff
 {
@@ -50,30 +50,32 @@ namespace UsefulStuff
             api.World.Config.SetBool("USrockCrushingEnabled", UsefulStuffConfig.Loaded.RockCrushingEnabled);
             api.World.Config.SetBool("USpotKilnEnabled", UsefulStuffConfig.Loaded.PotKilnEnabled);
             api.World.Config.SetBool("USshearDecorEnabled", UsefulStuffConfig.Loaded.ShearDecorEnabled);
+            api.World.Config.SetBool("USchiselBenchEnabled", UsefulStuffConfig.Loaded.ChiselBenchEnabled);
+            api.World.Config.SetBool("UStradersEnabled", UsefulStuffConfig.Loaded.TradersEnabled);
+            api.World.Config.SetBool("USgasMaskEnabled", UsefulStuffConfig.Loaded.GasMaskEnabled && api.ModLoader.IsModEnabled("gasapi"));
         }
 
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
 
-            api.RegisterItemClass("ItemShield", typeof(ItemShield));
             api.RegisterItemClass("Tentbag", typeof(ItemTentbag));
             api.RegisterItemClass("ItemGlider", typeof(ItemGlider));
             api.RegisterItemClass("ItemToolhead", typeof(ItemToolhead));
+            api.RegisterItemClass("ItemClimbingPick", typeof(ItemClimbingPick));
+            api.RegisterItemClass("ItemGasMask", typeof(ItemGasMask));
 
-            api.RegisterBlockClass("BlockRappelAnchor", typeof(BlockRappelAnchor));
-            api.RegisterBlockClass("BlockClimbingRope", typeof(BlockClimbingRope));
             api.RegisterBlockClass("BlockOmniChute", typeof(BlockOmniChute));
             api.RegisterBlockClass("BlockFireBox", typeof(BlockFireBox));
             api.RegisterBlockClass("BlockNameTag", typeof(BlockNameTag));
+            api.RegisterBlockClass("BlockChiselBench", typeof(BlockChiselBench));
 
             api.RegisterBlockEntityClass("BESluice", typeof(BESluice));
             api.RegisterBlockEntityClass("FireBox", typeof(BlockEntityFireBox));
             api.RegisterBlockEntityClass("NameTag", typeof(BlockEntityNameTag));
-
-            api.RegisterEntityBehaviorClass("shield", typeof(EntityBehaviorShield));
-
-            api.RegisterItemClass("ItemClimbingPick", typeof(ItemClimbingPick));
+            api.RegisterBlockEntityClass("PotteryHolder", typeof(BlockEntityPotteryHolder));
+            api.RegisterBlockEntityClass("ChiselBench", typeof(BlockEntityChiselBench));
+            api.RegisterBlockEntityClass("BEWelcomeMat", typeof(BEWelcomeMat));
 
             api.RegisterCollectibleBehaviorClass("RemoveDecor", typeof(CollectibleBehaviorRemoveDecor));
 
@@ -123,127 +125,6 @@ namespace UsefulStuff
         public override void StartClientSide(ICoreClientAPI api)
         {
             base.StartClientSide(api);
-        }
-    }
-
-    public class UsefulStuffConfig
-    {
-        public static UsefulStuffConfig Loaded { get; set; } = new UsefulStuffConfig();
-
-        //Shield
-        public float ShieldDownAfterAttack { get; set; } = 0.25f;
-
-        public float ShieldFatigueMultiplier { get; set; } = 1f;
-
-        public float ShieldRecoveryRate { get; set; } = 3f;
-        //Sluice Settings
-        public float SluiceEfficiency { get; set; } = 1f;
-
-        public float SluiceSiftTime { get; set; } = 0.25f;
-
-        public int SluiceSiftPerBlock { get; set; } = 1;
-
-        
-
-        //Climbing Pick
-        public int ClimbingPickDamageRate { get; set; } = 100;
-
-        public bool ClimbingPickDisabledInProtected { get; set; } = true;
-
-        //Glider
-        public int GliderDamageRate { get; set; } = 100;
-
-        public double GliderDescentRModifier { get; set; } = 0.75;
-
-        public double GliderMaxStall { get; set; } = 0.6;
-
-        public double GliderMinStall { get; set; } = -0.7;
-
-        public double GliderThrustModifier { get; set; } = 0.02;
-
-        public double GliderWindPushModifier { get; set; } = 0.005;
-
-        public double GliderBackwardsAt { get; set; } = 0.2;
-
-        public bool GliderNoCaveDiving { get; set; } = true;
-
-        //Quenching
-        public string[] QuenchBonusMats { get; set; } = { "iron", "steel", "meteoriciron" };
-
-        public float QuenchBonusMult { get; set; } = 0.2f;
-
-        //Tent Settings
-        public int TentRadius { get; set; } = 3;
-
-        public int TentHeight { get; set; } = 3;
-
-        public bool TentKeepContents { get; set; } = false;
-
-        public float TentBuildEffort { get; set; } = 100f;
-
-        //Pot Kiln settings
-
-        public double PotKilnBurnHours { get; set; } = 12;
-
-
-        #region Control Content
-
-        public bool ShieldsEnabled { get; set; } = true;
-
-        public bool ClimbingRopeEnabled { get; set; } = true;
-
-        public bool ClimbingPickEnabled { get; set; } = true;
-
-        public bool SluiceEnabled { get; set; } = true;
-
-        public bool TentbagEnabled { get; set; } = true;
-
-        public bool GliderEnabled { get; set; } = true;
-
-        public bool LanternClipOnEnabled { get; set; } = true;
-
-        public bool FireArrowEnabled { get; set; } = true;
-
-        public bool ExplosiveArrowEnabled { get; set; } = true;
-
-        public bool CardiacArrowEnabled { get; set; } = true;
-
-        public bool TranqArrowEnabled { get; set; } = true;
-
-        public bool BeenadeArrowEnabled { get; set; } = true;
-
-        public bool QuenchEnabled { get; set; } = true;
-
-        public bool OmnichuteEnabled { get; set; } = true;
-
-        public bool PotKilnEnabled { get; set; } = true;
-
-        public bool RockCrushingEnabled { get; set; } = true;
-
-        public bool ToolRecyclingEnabled { get; set; } = true;
-
-        public bool ClothesRecyclingEnabled { get; set; } = true;
-
-        public bool ShearDecorEnabled { get; set; } = true;
-        #endregion
-    }
-
-    public class CollectibleBehaviorRemoveDecor : CollectibleBehavior
-    {
-        public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling, ref EnumHandling handling)
-        {
-            base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handHandling, ref handling);
-
-            handHandling = EnumHandHandling.PreventDefault;
-            if (blockSel != null && byEntity.World.BlockAccessor.GetDecors(blockSel.Position)[blockSel.Face.Index] != null)
-            {
-                byEntity.World.BlockAccessor.BreakDecor(blockSel.Position, blockSel.Face);
-                byEntity.World.BlockAccessor.MarkChunkDecorsModified(blockSel.Position);
-            }
-        }
-
-        public CollectibleBehaviorRemoveDecor(CollectibleObject collObj) : base(collObj)
-        {
         }
     }
 }

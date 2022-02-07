@@ -1,0 +1,75 @@
+{
+	code: "shield",
+	class: "ItemShield",
+	variantgroups: [
+		{code: "covering", states: ["wicker", "pelt", "leather", "linen"]}
+	],
+	creativeinventory: { "general": ["*"] },
+	durabilityByType: {
+		"*-wicker": 100,
+		"*-pelt": 250,
+		"*-leather": 450,
+		"*-linen": 600
+	},
+	tooltierByType: {
+		"*-wicker": 1,
+		"*-pelt": 2,
+		"*-leather": 3,
+		"*-linen": 4
+	},
+	attackpower: 0,
+	storageFlags: 257,
+	maxstacksize: 1,
+	attributes: {
+		rackable: true,
+		toolrackTransform: {
+			translation: { x: 0, y: -0.1, z: 0 },
+			rotation: { x: 90, y: 0, z: 0 },
+			scale: 1.48
+		},
+		shieldTimeByType:{
+			"*-wicker" : 300,
+			"*-pelt" : 180,
+			"*-leather" : 120,
+			"*-linen" : 90
+		}
+	},
+	shape: { base: "item/tool/buckler" },
+	texturesByType: {
+		"*-wicker": {
+			"shield" : { base: "game:block/vines/basket/normal-westeast" },
+			"decor" : { base: "game:block/wood/bark/pine-h" },
+		},
+		"*-pelt": {
+			"shield" : { base: "game:block/cloth/leather/longstiches" },
+		},
+		"*-leather": {
+			"shield" : { base: "game:block/cloth/leather/normal" },
+			"decor" : { base: "game:block/metal/ingot/copper" },
+		},
+		"*-linen": {
+			"shield" : { base: "game:block/cloth/linen/normal1" },
+			"decor" : { base: "game:block/metal/ingot/iron" },
+		}
+	},
+	guiTransform: {
+	rotation: { x: 0, y: 7, z: -18 },
+	scale: 1.15
+},
+groundTransform: {
+	translation: { x: 0, y: 0, z: 0 },
+	rotation: { x: 90, y: 0, z: 0 },
+	origin: { x: 0.5, y: 0.5, z: 0.5299 },
+	scale: 3.22
+},
+tpHandTransform: {
+	translation: { x: -0.81, y: -0.91, z: -0.74 },
+	rotation: { x: -94, y: 32, z: 0 },
+	scale: 0.65
+},
+fpHandTransform: {
+	translation: { x: -0.01, y: -0.2, z: 0 },
+	rotation: { x: 180, y: 0, z: 90 },
+	scale: 2
+},
+}

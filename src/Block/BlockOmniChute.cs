@@ -76,6 +76,9 @@ namespace UsefulStuff
                 Block block = world.BlockAccessor.GetBlock(newBlockCode);
                 if (block == null) return;
 
+                BlockEntityItemFlow bef = world.BlockAccessor.GetBlockEntity(pos) as BlockEntityItemFlow;
+                if (bef != null) bef.Inventory.DropAll(pos.ToVec3d().Add(0.5));
+
                 world.BlockAccessor.SetBlock(block.BlockId, pos);
                 world.BlockAccessor.TriggerNeighbourBlockUpdate(pos);
             }

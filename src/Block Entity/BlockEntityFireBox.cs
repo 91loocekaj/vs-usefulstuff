@@ -26,6 +26,8 @@ namespace UsefulStuff
         static SimpleParticleProperties smoke;
         bool[] firing = new bool[18];
         MeshData fullmesh;
+        GasHelper gasPlug;
+        Dictionary<string, float> smokeGas;
 
         public BlockEntityFireBox()
         {
@@ -62,7 +64,12 @@ namespace UsefulStuff
             ms = Block.Attributes["multiblockStructure"].AsObject<MultiblockStructure>();
             ms.InitForUse(0);
             fuels = Block.Attributes["fuelTypes"].AsObject<Dictionary<string, int>>();
+            gasPlug = api.ModLoader.GetModSystem<GasHelper>();
             RegisterGameTickListener(OnGameTick, 500);
+            smokeGas = new Dictionary<string, float>();
+            smokeGas.Add("carbonmonoxide", 0.1f);
+            smokeGas.Add("carbondioxide", 0.2f);
+            smokeGas.Add("silicadust", 0.2f);
         }
 
         public void OnGameTick(float dt)
@@ -76,6 +83,8 @@ namespace UsefulStuff
                 ambientSound?.Stop();
                 return;
             }
+
+            gasPlug?.SendGasSpread(Pos, smokeGas);
 
             if (Api.Side == EnumAppSide.Client)
             {
@@ -97,7 +106,9 @@ namespace UsefulStuff
             int shouldFire = 0;
             ambientSound?.Stop();
 
-            BlockPos tmpPos = Pos.Copy();
+            BlockPos tmpPos = Pos.UpCopy(2);
+            Api.World.BlockAccessor.SetBlock(Api.World.GetBlock(new AssetLocation("usefulstuff:potteryholder")).BlockId, tmpPos);
+            BlockEntityContainer bc = Api.World.BlockAccessor.GetBlockEntity(tmpPos) as BlockEntityContainer;
 
             for (int x = -1; x < 2; x++)
             {
@@ -112,18 +123,33 @@ namespace UsefulStuff
                             BlockEntityGroundStorage gs = Api.World.BlockAccessor.GetBlockEntity(tmpPos) as BlockEntityGroundStorage;
                             if (gs != null)
                             {
+                                int empty = 0;
                                 foreach (ItemSlot slot in gs.Inventory)
                                 {
                                     if (slot.Itemstack?.Collectible.CombustibleProps?.SmeltedStack?.ResolvedItemstack != null && slot.Itemstack.Collectible.CombustibleProps.SmeltingType == EnumSmeltType.Fire)
                                     {
                                         int orgSize = slot.Itemstack.StackSize;
-                                        slot.Itemstack = slot.Itemstack.Collectible.CombustibleProps.SmeltedStack.ResolvedItemstack.Clone();
-                                        slot.Itemstack.StackSize = orgSize;
+                                        ItemStack burned = slot.Itemstack.Collectible.CombustibleProps.SmeltedStack.ResolvedItemstack.Clone();
+                                        burned.StackSize = orgSize;
+                                        slot.TakeOutWhole();
                                         slot.MarkDirty();
+                                        empty++;
+
+                                        foreach (ItemSlot holder in bc.Inventory)
+                                        {
+                                            if (holder.Empty)
+                                            {
+                                                holder.Itemstack = burned;
+                                                holder.MarkDirty();
+                                                break;
+                                            }
+                                        }
                                     }
+                                    else if (slot.Empty) empty++;
                                 }
 
-                                gs.MarkDirty(true);
+                                if (empty >= 4) Api.World.BlockAccessor.SetBlock(0, tmpPos); else gs.MarkDirty(true);
+
                             }
                         }
                         shouldFire++;
@@ -134,7 +160,6 @@ namespace UsefulStuff
             firing = new bool[18];
             MarkDirty(true);
         }
-
 
         public void OnInteract(IPlayer player)
         {
@@ -324,7 +349,10 @@ namespace UsefulStuff
         public int GetIncomplete()
         {
             int ignoregas = 0;
-            int inc = ms.InCompleteBlockCount(Api.World, Pos, (block, wrong) => { if (wrong.Path.Contains("air") && block.Replaceable > 9500) ignoregas++; });
+            int inc = ms.InCompleteBlockCount(Api.World, Pos, (block, wrong) => 
+            { 
+                if (wrong.Path.Contains("air") && block.Replaceable > 9500) ignoregas++; 
+            });
 
             return inc - ignoregas;
         }

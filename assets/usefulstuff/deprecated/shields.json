@@ -1,0 +1,63 @@
+[
+  {
+  	ingredientPattern: "RSR,SRS,RSR",
+  	ingredients: {
+  		"S": { type: "item", code: "game:stick", quantity: 2 },
+      "R": { type: "item", code: "game:rope"}
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "usefulstuff:shield-wicker"  }
+  },
+  {
+  	ingredientPattern: "SSS,SRS,SSS",
+  	ingredients: {
+  		"S": { type: "item", code: "game:plank-*" },
+      "R": { type: "item", code: "game:hide-pelt-small", quantity: 4}
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "usefulstuff:shield-pelt"  }
+  },
+  {
+  	ingredientPattern: "SSS,SRS,SSS",
+  	ingredients: {
+  		"S": { type: "item", code: "game:plank-*" },
+      "R": { type: "item", code: "game:hide-pelt-medium", quantity: 2}
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "usefulstuff:shield-pelt"  }
+  },
+  {
+  	ingredientPattern: "SSS,SRS,SSS",
+  	ingredients: {
+  		"S": { type: "item", code: "game:plank-*" },
+      "R": { type: "item", code: "game:hide-pelt-large", quantity: 1}
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "usefulstuff:shield-pelt"  }
+  },
+  {
+  	ingredientPattern: "LML",
+  	ingredients: {
+  		"M": { type: "item", code: "game:metalplate-copper" },
+      "L": { type: "item", code: "game:leather", quantity: 2}
+  	},
+  	width: 3,
+  	height: 1,
+  	output: { type: "item", code: "usefulstuff:shield-leather"  }
+  },
+  {
+  	ingredientPattern: "LMC",
+  	ingredients: {
+  		"M": { type: "item", code: "game:metalplate-iron" },
+      "L": { type: "item", code: "game:leather", quantity: 4},
+      "C": { type: "block", code: "game:linen-*" },
+  	},
+  	width: 3,
+  	height: 1,
+  	output: { type: "item", code: "usefulstuff:shield-linen"  }
+  },
+]

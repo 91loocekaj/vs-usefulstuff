@@ -1,0 +1,11 @@
+{
+  ingredientPattern: "HS,PP,PP",
+  ingredients: {
+    "H": { type: "item", code: "game:hammer-*" },
+    "S": { type: "item", code: "game:saw-*" },
+    "P": { type: "item", code: "game:plank-*" },
+  },
+  width: 2,
+  height: 3,
+  output: { type: "block", code: "usefulstuff:chiselbench-north", quantity: 1 }
+}

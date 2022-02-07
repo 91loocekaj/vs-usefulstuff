@@ -37,7 +37,7 @@ namespace UsefulStuff
             new WorldInteraction[] { new WorldInteraction()
             {
                 MouseButton = EnumMouseButton.Right,
-                Itemstacks = new ItemStack[] { new ItemStack(api.World.GetBlock(new AssetLocation("torch-up"))) },
+                Itemstacks = new ItemStack[] { new ItemStack(api.World.GetBlock(new AssetLocation("torch-basic-lit-up"))) },
                 HotKeyCode = "sneak",
                 ActionLangCode = "blockhelp-bloomery-ignite"
             }}

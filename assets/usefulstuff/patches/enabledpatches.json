@@ -1,5 +1,55 @@
 [
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:itemtypes/gasmask.json",
+    "condition": { "when": "USgasMaskEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/gasmask.json",
+    "condition": { "when": "USgasMaskEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:blocktypes/welcomemat.json",
+    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/mat.json",
+    "condition": { "when": "UStradersEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/1/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/mat.json",
+    "condition": { "when": "UStradersEnabled", "isValue": "false" }
+  },
 
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:itemtypes/shield.json",
+    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
+  },
+
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/shields.json",
+    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
+  },
 
   {
     "op": "add",
@@ -31,78 +81,6 @@
     "value": false,
     "file": "usefulstuff:recipes/grid/tentbag.json",
     "condition": { "when": "UStentbagEnabled", "isValue": "false" }
-  },
-
-  {
-    "op": "add",
-    "path": "/enabled",
-    "value": false,
-    "file": "usefulstuff:itemtypes/shield.json",
-    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
-  },
-
-  {
-    "op": "add",
-    "path": "/0/enabled",
-    "value": false,
-    "file": "usefulstuff:recipes/grid/shields.json",
-    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
-  },
-
-  {
-    "op": "add",
-    "path": "/1/enabled",
-    "value": false,
-    "file": "usefulstuff:recipes/grid/shields.json",
-    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
-  },
-
-  {
-    "op": "add",
-    "path": "/2/enabled",
-    "value": false,
-    "file": "usefulstuff:recipes/grid/shields.json",
-    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
-  },
-
-  {
-    "op": "add",
-    "path": "/3/enabled",
-    "value": false,
-    "file": "usefulstuff:recipes/grid/shields.json",
-    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
-  },
-
-  {
-    "op": "add",
-    "path": "/4/enabled",
-    "value": false,
-    "file": "usefulstuff:recipes/grid/shields.json",
-    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
-  },
-
-  {
-    "op": "add",
-    "path": "/5/enabled",
-    "value": false,
-    "file": "usefulstuff:recipes/grid/shields.json",
-    "condition": { "when": "USshieldsEnabled", "isValue": "false" }
-  },
-
-  {
-    "op": "add",
-    "path": "/enabled",
-    "value": false,
-    "file": "usefulstuff:blocktypes/climbingrope.json",
-    "condition": { "when": "USclimbingRopeEnabled", "isValue": "false" }
-  },
-
-  {
-    "op": "add",
-    "path": "/enabled",
-    "value": false,
-    "file": "usefulstuff:recipes/grid/ropeanchor.json",
-    "condition": { "when": "USclimbingRopeEnabled", "isValue": "false" }
   },
 
   {
@@ -221,5 +199,13 @@
     "value": [{"name": "RemoveDecor"}],
     "file": "game:itemtypes/tool/shears.json",
     "condition": { "when": "USshearDecornabled", "isValue": "false" }
-  }
+  },
+
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "usefulstuff:recipes/grid/chiselbench.json",
+    "condition": { "when": "USchiselBenchEnabled", "isValue": "false" }
+  },
 ]

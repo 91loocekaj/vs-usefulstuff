@@ -1,0 +1,125 @@
+{
+  "item-shield-crude-square-wicker" : "Bouclier en osier",
+  "item-shield-pelt" : "Bouclier en peau",
+  "item-shield-leather" : "Bouclier en cuir",
+  "item-shield-linen" : "Bouclier composite",
+  "item-tentbag-empty" : "Sac de tente vide",
+  "item-tentbag-packed" : "Sac de tente emballé",
+  "item-climbingpick-iron" : "Pioche d'escalade en fer",
+  "item-climbingpick-meteoriciron" : "Pic d'escalade en fer météorique",
+  "item-climbingpick-steel" : "Pic d'escalade en acier",
+  "item-glider" : "Planeur",
+  "item-nametag" : "Tablette",
+
+  "block-climbingrope-start-*": "Ancre de corde",
+  "block-climbingrope-section-*": "Corde d'escalade",
+  "block-sluice-*": "Rampe d'écluse",
+  "block-omnichute-*" : "Chute courbée",
+  "block-firebox-light" : "Foyer (clair)",
+  "block-firebox-dark" : "Foyer (foncé)",
+  "block-nametag-raw" : "Tablette non cuite",
+  "block-nametag-burned" : "Tablette en céramique",
+  "block-potteryholder" : "Poterie finie",
+  "block-chiselbench-*" : "Banc de burinage",
+
+  "blockdesc-omnichute-*" : "Une goulotte qui peut facilement se plier là où vous en avez besoin.",
+  "blockdesc-nametag-*" : "Une tablette pratique pour écrire les noms des choses importantes.",
+  "blockdesc-tentbag-empty" : "Un sac de tente complètement vide, besoin d'y mettre quelque chose.",
+  "blockdesc-tentbag-packed" : "Un sac de tente prêt à partir pour vos aventures !",
+
+
+  "blockhelp-anchor-deploy": "Déployer la corde",
+  "blockhelp-anchor-retract": "Monter la corde",
+  "blockhelp-breakdown" : "Restaurer",
+  "blockhelp-addmat" : "Ajouter du matériel",
+
+  "itemhelp-shield": "Bloquer",
+  "itemhelp-glider-airbrake" : "Frein",
+  "heldhelp-nameentity" : "Nom de l'entité/Effacer le nom de l'entité",
+  "heldhelp-nameitem" : "Nom de l'élément/Effacer le nom de l'élément",
+
+  "Cannot pack {0} in a bag!": "Impossible d'emballer {0} dans un sac !",
+  "Cannot unpack here, need solid ground!" : "Impossible de déballer ici, besoin d'un sol solide !",
+  "Cannot unpack here, need a clear area!" : "Impossible de déballer ici, besoin d'un espace dégagé !",
+  "Quenched" : "Trempé, doit être inférieur à 200 degrés pour fabriquer avec",
+
+  "arrowtip-explosive": "Charge explosive activée",
+  "arrowtip-incendiary": "Incendiaire",
+  "arrowtip-beenade": "Grenabeille activé",
+  "arrowtip-cardiac": "Revêtement toxique",
+  "arrowtip-tranq": "Revêtement tranquillisant",
+
+  "firebox-burning": "Brûle actuellement",
+  "firebox-full": "Chargé et prêt à être allumé",
+  "kiln-lock": "Je ne peux pas y toucher, c'est en train de cuire !",
+
+  "imprinton" : "Article prêt à nommer !",
+  "imprintoff" : "Dénomination de l'article désactivée.",
+  "eraseon" : "Prêt à effacer le nom de l'élément !",
+  "eraseoff" : "Effacement du nom de l'élément.",
+  "nametag-name" : "Nom actuel écrit : ",
+  "nametag-erase" : "Aucun nom écrit, effacera les noms.",
+  "usefulstuffguide-title" : "Guide des choses utiles",
+  "usefulstuffguide-text" : "<strong>Un guide pour utiliser des choses utiles</strong>
+Voici quelques conseils et rappels utiles pour l'utilisation du mod Useful Stuff. Remarque : Ce guide a été conçu en gardant à l'esprit les paramètres par défaut. Si quelque chose ne correspond pas au guide, ou s'il manque un élément/bloc, vérifiez la configuration pour voir s'il a été désactivé ou contactez l'administrateur de votre serveur.
+
+<strong>Boucliers</strong>
+Les <a href=\"handbooksearch://shield\">boucliers</a> offrent au joueur la possibilité de bloquer complètement les attaques devant lui, en s'accroupissant avec lui dans l'une ou l'autre main. Les boucliers se briseront et la durabilité perdue est basée sur les dégâts infligés et le niveau de l'attaque. Les boucliers ne protégeront pas l'utilisateur lors de l'attaque et ils sont de moins en moins efficaces à mesure que vous protégez longtemps. Les boucliers métalliques plus lourds vous usent beaucoup plus rapidement. Il existe actuellement quatre boucliers : bouclier en osier (âge de pierre), bouclier en peau (âge du cuivre précoce), bouclier en cuir (âge du cuivre tardif), bouclier composite (âge du fer).
+
+<strong>Écluse</strong>
+La <a href=\"handbook://block-usefulstuff:sluice-north\">rampe d'écluse</a> peut séparer les minerais et les objets de valeur de n'importe quel sol/bloc praticable, ce qui signifie que vous n'avez pas à passer des heures jusqu'aux genoux dans l'eau remplissant votre inventaire de déchets pour trouver des objets de valeur. Pour utiliser la rampe, vous avez d'abord besoin d'un petit courant d'eau, le courant le plus bas auquel il ira. Placez la rampe en dessous et si vous l'avez bien placée, vous devriez voir l'eau couler. Placez une trémie directement au-dessus de l'écluse et remplissez-la de sols pouvant être transportés, comme du sable, du gravier, etc., et le tour est joué ! Les articles séparés tombent devant. Gardez à l'esprit qu'il ne donne potentiellement qu'un seul élément par bloc contre huit potentiels de panoramique.
+
+<strong>Sac de tente</strong>
+Le <a href=\"handbook://item-usefulstuff:tentbag-empty\">sac de tente</a> permet au joueur de créer une structure temporaire et de la transporter avec lui, créant ainsi un mode de vie nomade même dans les endroits les plus hostiles. terrains possibles. Créez une structure dans une zone 7X3X7 et cliquez avec le bouton droit sur le sol sous la structure au centre pour la ranger. Le sol ne compte pas et ne se tasse pas ! Il ne doit pas y avoir de blocs interdits dans la zone (roche, translocateurs statiques, etc.) et les conteneurs et piles d'objets laisseront tomber leur contenu lors de l'emballage. Pour déballer, vous avez besoin d'un sol solide 7X7 et d'une zone 7X3X7 complètement dégagée au-dessus. Faites un clic droit sur le bloc sous le centre pour le déployer. Il en coûte 100 saturation pour emballer et déballer une tente
+
+<strong>Pieds d'escalade</strong>
+<a href=\"handbooksearch://climbing pick\">Les pics d'escalade</a> vous permettent d'escalader n'importe quel bloc ou surface. Il ne peut être fabriqué qu'à partir de matériaux fer + et nécessite que vous en ayez deux, un dans chaque main, pour grimper. Grimper avec ceux-ci les endommagera lentement au fil du temps, et ils peuvent être réparés par la meule nécessaire. Ne fonctionnera pas près d'un patron.
+
+<strong>Planeur</strong>
+Ce <a href=\"handbook://item-usefulstuff:glider\">planeur</a> grossièrement assemblé peut aider à traverser les zones montagneuses beaucoup plus rapidement. Il faut faire preuve de beaucoup de prudence et de soin pour ne pas atterrir trop fort ou au mauvais endroit. Sautez d'une falaise ou d'un rebord avec le planeur à la main pour planer. Regardez où vous voulez aller et appuyez sur espace pour vous arrêter et tomber normalement. Ne retenez pas l'espace. Regarder vers le bas vous fera descendre plus vite mais gagnera beaucoup plus de vitesse horizontale. Viser vers l'horizon vous fera descendre plus lentement, tandis que regarder vers le haut vous ralentira horizontalement et vous fera même reculer. Regarder trop haut ou trop bas vous fera caler, perdre tout votre élan et vous écraser au sol. Il y a des courants ascendants partout dans le monde et cela vous aidera avec un vol soutenu. Les planeurs ne peuvent pas être utilisés dans les grottes.
+
+<strong>Bendy Chutes</strong>
+Vous installez des chutes et avez besoin d'une orientation que le jeu ne prend pas en charge ? Fini tout cela avec les <a href=\"handbook://block-usefulstuff:omnichute-ns\">chutes flexibles !</a> Fabriqué avec deux sections de chute et un équipement rouillé. S'enclenchera automatiquement sur n'importe quelle autre goulotte ou conteneur flexible.
+
+<strong>Flèches à pointe</strong>
+Donnez un peu plus de punch à vos flèches en leur donnant un pourboire !
+Flèches explosives
+Fabriqué en plaçant une bombe explosive et une flèche dans la grille de fabrication. Explose à l'impact et détruit la flèche
+Flèches de feu
+Fabriqué en plaçant une torche allumée, de la graisse et une flèche dans la grille de fabrication. Allume les entités en feu lors de l'impact et perd sa pointe
+Flèches beenades
+Fabriqué en plaçant une beade remplie et une flèche dans la grille de fabrication. Libère 1 à 2 essaims d'abeilles à l'impact et perd sa pointe
+Flèches tranquillisantes
+Fabriqué en plaçant une flèche, de la résine et soit un coquelicot doré, soit de la menthe à chat dans la grille de fabrication. Ralentit la cible de 10 % par coup et plusieurs coups peuvent l'empêcher de bouger. (Remarque : les entités hostiles peuvent toujours attaquer et sauter). Dure 1 heure de jeu. N'a aucun effet sur les foules mécaniques
+Flèches d'arrêt de coeur
+Fabriqué en plaçant une flèche, de la résine, de l'agaric tue-mouche et du muguet dans la grille de fabrication. Après 1 heure de jeu, il inflige 75% de la santé maximale de l'animal sous forme de dégâts. L'effet ne se cumule pas. N'a aucun effet sur les créatures mécaniques
+
+<strong>Four à poterie</strong>
+Cette structure multi-blocs peut cuire plusieurs pièces d'argile à la fois, en utilisant moins de temps et de ressources que le four à fosse. Vous devez d'abord fabriquer un <a href=\"handbooksearch://firebox\">firebox</a> à partir de briques crues. Ensuite, placez-le sur le sol et faites un clic droit dessus. Utilisez des briques crues pour le construire. Les quatre entrées d'air et l'évent doivent être dégagés pour que cela fonctionne. Une fois la construction terminée, placez des morceaux d'argile sur le sol à l'intérieur autour de l'évent et insérez exactement 32 bois de chauffage, ou 8 charbons, puis allumez. Par défaut, il faudra 12 heures pour tout cuire. Pendant ce temps, vous ne pouvez pas prendre/placer des objets qui étaient avant le début du processus. De plus, les objets placés après l'allumage ne brûleront pas. Enfin, casser la structure ou obstruer l'une des prises d'air ou l'évent arrêtera le processus. (Ne laissez pas l'herbe pousser dans les évents). Vous saurez que c'est terminé lorsque la fumée ne sort plus de la cheminée.
+
+<strong>Tablette en céramique</strong>
+La <a href=\"handbooksearch://tablet\">tablette en céramique</a> peut être utilisée pour écrire les noms d'éléments et d'entités qui vous sont propres. Une fois que vous avez une tablette cuite, placez-la sur le sol et faites un clic droit avec un objet pigmenté pour écrire un nom. Une fois que vous avez terminé avec le nom, enregistrez-le et récupérez-le. Pour attribuer le nom à une entité, Maj-clic droit sur l'entité. Cela ne fonctionnera pas sur les commerçants ou les autres joueurs ! Pour nommer un élément, appuyez d'abord sur ctrl + shift + clic droit et vous devriez voir un message apparaître dans le journal d'informations. Prenez l'élément que vous souhaitez nommer et échangez-le avec la tablette. Vous devriez voir un autre message si cela a réussi. Lorsque vous nommez une entité ou un élément, il sera effacé de la tablette. Une tablette sans nom peut être utilisée pour effacer des noms et vous le feriez de la même manière que vous nommez quelque chose. Remarque : Pour les articles, le nom sera perdu s'il est transformé, par exemple la cuisson de la viande. Placer également un bloc nommé perdra également son nom. Enfin certains objets ne peuvent pas être nommés, comme les minerais par exemple.
+
+<strong>Banc de burinage</strong>
+Le <a href=\"handbook://block-usefulstuff:chiselbench-north\">banc de burinage</a> peut être utilisé pour ajouter rapidement des matériaux à une pièce de burinage ou restituer les blocs à partir desquels elle a été fabriquée à l'origine. Pour l'utiliser, placez un bloc ciselé sur le dessus du banc. Pour ajouter un matériau, cliquez avec le bouton droit sur le bloc que vous souhaitez ajouter avec un ciseau pour le transformer d'abord en bloc de ciseau. Ensuite, prenez-le et faites un clic droit sur le banc de ciseau pour ajouter ce matériau à votre pièce. Pour restaurer une œuvre ciselée dans ses blocs d'origine, il suffit de déplacer le clic droit avec un ciseau sur le banc et les blocs tomberont sur le dessus du banc.
+
+<strong>Clip de lanterne</strong>
+<a href=\"handbooksearch://lantern\">Les lanternes</a> peuvent être fixées sur un <a href=\"handbooksearch://backpack\">sac à dos</a> pour libérer vos mains. Le sac à dos le plus à gauche doit être un sac à dos (sac à dos de chasseur, sac à dos en cuir ou les sacs à dos évolutifs du mod ABCS) et la lanterne doit être placée dans le premier emplacement d'inventaire en haut à gauche, il doit s'agir d'une lanterne vanille, lanterne en bois Primitive Survival , ou une lanterne MoreClasses pour fonctionner.
+
+<strong>Autres choses utiles à savoir</strong>
+Le pulvérisateur peut briser certaines roches en sable et écraser l'argile en argile réfractaire
+Les têtes d'outils et les outils peuvent être broyés en morceaux de métal dans la meule.
+Les outils en métal laisseront tomber des morceaux de métal lorsqu'ils se cassent
+Les vêtements peuvent être recyclés pour de la ficelle ou du cuir en les mettant dans une grille d'artisanat avec un couteau.",
+
+"block-welcomemat" : "Bienvenue Mat",
+
+"blockdesc-welcomemat" : "Invitez les commerçants fatigués pour une nuit de repos et de commerce.",
+"Not built right!": "Pas bien construit !",
+"No place to rest!": "Pas de place pour se reposer !",
+"No food for next guest!": "Pas de nourriture pour le prochain invité !",
+"Another merchant arrives in {0} days": "Un autre marchand arrive dans {0} jours",
+"Another merchant arrives in less than a day": "Un autre commerçant arrive en moins d'une journée",
+"Merchant leaves in {0} days": "Le marchand part dans {0} jours",
+"Merchant leaves in less than a day": "Le commerçant part dans moins d'un jour",
+}

@@ -1,5 +1,6 @@
 {
 	code: "climbingrope",
+	enabled: false,
   classByType:{
     "*-start-*": "BlockRappelAnchor",
     "*-section-*": "BlockClimbingRope"

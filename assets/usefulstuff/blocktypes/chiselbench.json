@@ -1,0 +1,75 @@
+{
+	code: "chiselbench",
+  class: "BlockChiselBench",
+  entityClass: "ChiselBench",
+	behaviors: [{name: "HorizontalOrientable"}],
+	shape: { base: "game:block/basic/cube" },
+	drawtype: "cube",
+	variantgroups: [
+		{ code:"side", loadFromProperties: "abstract/horizontalorientation" }
+	],
+	creativeinventory: { "general": ["chiselbench-north"], "decorative": ["chiselbench-north"] },
+	attributes: {
+		canChisel: false,
+	},
+	replaceable: 500,
+	resistance: 1.5,
+	lightAbsorption: 99,
+	sidesolid: {
+		all: true,
+	},
+	sideopaque: {
+		all: true
+	},
+	texturesByType: {
+		"*-north": {
+			up: { base: "game:block/wood/workbench/top" },
+			down: { base: "game:block/wood/workbench/bottom" },
+			south: { base: "game:block/wood/workbench/back" },
+			north: { base: "game:block/wood/workbench/front" },
+			west: { base: "game:block/wood/workbench/left" },
+			east: { base: "game:block/wood/workbench/right" },
+		},
+		"*-east": {
+			up: { base: "game:block/wood/workbench/top" },
+			down: { base: "game:block/wood/workbench/bottom" },
+			west: { base: "game:block/wood/workbench/front" },
+			east: { base: "game:block/wood/workbench/back" },
+			north: { base: "game:block/wood/workbench/left" },
+			south: { base: "game:block/wood/workbench/right" },
+		},
+		"*-west": {
+			up: { base: "game:block/wood/workbench/top" },
+			down: { base: "game:block/wood/workbench/bottom" },
+			south: { base: "game:block/wood/workbench/front" },
+			east: { base: "game:block/wood/workbench/back" },
+			west: { base: "game:block/wood/workbench/left" },
+			north: { base: "game:block/wood/workbench/right" },
+		},
+		"*-south": {
+			up: { base: "game:block/wood/workbench/top" },
+			down: { base: "game:block/wood/workbench/bottom" },
+			west: { base: "game:block/wood/workbench/front" },
+			south: { base: "game:block/wood/workbench/back" },
+			north: { base: "game:block/wood/workbench/left" },
+			east: { base: "game:block/wood/workbench/right" },
+		},
+	},
+	combustibleProps: {
+		burnTemperature: 600,
+		burnDuration: 20,
+	},
+	sounds: {
+		"place": "game:block/planks",
+		"hit": "game:block/planks",
+		"break": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	materialDensity: 600,
+	heldTpIdleAnimation: "holdbothhandslarge", heldTpUseAnimation: "twohandplaceblock",
+	tpHandTransform: {
+		translation: { x: -1.2, y: -1.1, z: -0.8 },
+		rotation: { x: -2, y: 25, z: -78 },
+		scale: 0.37
+	}
+}

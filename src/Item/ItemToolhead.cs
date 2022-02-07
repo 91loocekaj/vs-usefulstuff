@@ -20,7 +20,7 @@ namespace UsefulStuff
 
         public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
         {
-            base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
+            if (!world.Api.ModLoader.IsModEnabled("mcbpicks")) base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
 
             if (UsefulStuffConfig.Loaded.QuenchEnabled && UsefulStuffConfig.Loaded.QuenchBonusMats.Contains(FirstCodePart(1)) && inSlot.Itemstack.Attributes.GetBool("quenched")) dsc.AppendLine(Lang.Get("usefulstuff:Quenched"));
         }

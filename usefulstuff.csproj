@@ -77,21 +77,29 @@
     <Compile Include="src\Block Entity\BESluice.cs" />
     <Compile Include="src\Block Entity\BlockEntityFireBox.cs" />
     <Compile Include="src\Block Entity\BlockEntityNameTag.cs" />
+    <Compile Include="src\Block Entity\BlockEntityPotteryHolder.cs" />
+    <Compile Include="src\Block Entity\BlockEntityChiselBench.cs" />
+    <Compile Include="src\Block Entity\BEMerchant.cs" />
+    <Compile Include="src\Block\BlockChiselBench.cs" />
     <Compile Include="src\Block\BlockNameTag.cs" />
     <Compile Include="src\Block\BlockFireBox.cs" />
     <Compile Include="src\Block\BlockOmniChute.cs" />
     <Compile Include="src\Block\BlockClimbingRope.cs" />
     <Compile Include="src\Block\BlockRappelAnchor.cs" />
     <Compile Include="src\Behavior\EntityBehaviorShield.cs" />
-    <Compile Include="src\BuffStuff.cs" />
-    <Compile Include="src\Effects.cs" />
+    <Compile Include="src\Item\ItemGasMask.cs" />
+    <Compile Include="src\UsefulStuffConfig.cs" />
+    <Compile Include="src\Util\BuffStuff.cs" />
+    <Compile Include="src\Collectible Behavior\CollectibleBehaviorRemoveDecor.cs" />
+    <Compile Include="src\Util\Effects.cs" />
     <Compile Include="src\Inventory\ItemSlotSluice.cs" />
     <Compile Include="src\Item\ItemToolhead.cs" />
     <Compile Include="src\Item\ItemGlider.cs" />
     <Compile Include="src\Item\ItemClimbingPick.cs" />
     <Compile Include="src\Item\ItemTentbag.cs" />
     <Compile Include="src\Item\ItemShield.cs" />
-    <Compile Include="src\Patches.cs" />
+    <Compile Include="src\Util\USGasHelper.cs" />
+    <Compile Include="src\Util\Patches.cs" />
     <Compile Include="src\UsefulStuff.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,12 @@
+{
+  ingredientPattern: "LSL,SMS,SFS",
+  ingredients: {
+    "M": {type: "Item", code: "game:clothes-face-leather-reinforced-mask" },
+    "L": {type: "Block", code: "game:glass-plain" },
+    "F": {type: "Item", code: "game:charcoal", quantity: 4 },
+    "S": {type: "Item", code: "game:flaxtwine" },
+  },
+  width: 3,
+  height: 3,
+  output: {type: "Item", code: "usefulstuff:gasmask" }
+}

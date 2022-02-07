@@ -1,0 +1,74 @@
+{
+	code: "welcomemat",
+  entityclass: "BEWelcomeMat",
+  behaviors: [{name: "Unstable"}],
+	vertexFlags: {
+		zOffset: 3
+	},
+  attributes: {
+    merchants: [
+      "humanoid-trader-foods",
+      "humanoid-trader-artisan",
+      "humanoid-trader-buildmaterials",
+      "humanoid-trader-furniture",
+      "humanoid-trader-luxuries",
+      "humanoid-trader-treasurehunter",
+      "humanoid-trader-clothing",
+      "humanoid-trader-survivalgoods",
+      "humanoid-trader-commodities"
+    ],
+		badFood: [
+			"game:bowl-*",
+			"mushroom-flyagaric-*"
+		],
+		gifts: [
+			{ type: "item", code: "gear-rusty", quantity: 2  },
+			{ type: "item", code: "gear-rusty", quantity: 4  },
+			{ type: "item", code: "gear-rusty", quantity: 3  },
+		],
+    minTravelDays: 3,
+    maxTravelDays: 4,
+    stayDays: 1
+  },
+	sidesolid: { all: false },
+	sideopaque: { all: false },
+	blockmaterial: "Cloth",
+	creativeinventory: { "general": ["*"], "decorative": ["*"] },
+	replaceable: 4000,
+	resistance: 0.5,
+	lightAbsorption: 0,
+	textures: {
+		all: {
+			base: "game:block/cloth/smallcarpet/brown"
+		}
+	},
+	selectionbox: {
+		x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.0625, z2: 1,
+	},
+  shape: { base: "game:block/basic/flat" },
+	collisionbox: null,
+	combustibleProps: {
+		burnTemperature: 400,
+		burnDuration: 15,
+	},
+	sounds: {
+		place: "game:block/cloth",
+		walk: "game:walk/cloth"
+	},
+	guiTransform: {
+		translation: { x: 0, y: 3, z: 0 },
+		origin: { x: 0.5, y: 0.0625, z: 0.5 }
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: -45, z: 0 },
+		origin: { x: 0.5, y: -0.02, z: 0.5 },
+		scale: 1.5
+	},
+	tpHandTransform: {
+		translation: { x: -1.7, y: 0.1, z: -1.5 },
+		rotation: { x: -46, y: 0, z: -2 },
+		origin: { x: 0.5, y: 0, z: 0.5 }
+	},
+	materialDensity: 200
+}

@@ -2,10 +2,10 @@
   "type": "code",
   "modid": "usefulstuff",
   "name": "Useful Stuff",
-  "author": "jakecool19",
+  "authors": ["jakecool19"],
   "description": "Adds shields, climbing rope, etc.",
-  "version": "2.1.2",
-  "dependency": {
+  "version": "2.3.0",
+  "dependencies": {
     "game": ""
   }
 }

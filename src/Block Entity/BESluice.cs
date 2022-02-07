@@ -116,13 +116,13 @@ namespace UsefulStuff
                         
                         ItemStack stack;
 
-                        if (drops[i].Code.Path.Contains("{rocktype}"))
+                        if (UsefulStuffConfig.Loaded.SlucieGiveRocks && drops[i].Code.Path.Contains("{rocktype}"))
                         {
-                            stack = null;
+                            stack = Resolve(drops[i].Type, drops[i].Code.Path.Replace("{rocktype}", rocktype));
                         }
                         else
                         {
-                            drop.Resolve(Api.World, "sluicing");
+                            drop.Resolve(Api.World, "sluicing", false);
                             stack = drop.ResolvedItemstack;
                         }
 

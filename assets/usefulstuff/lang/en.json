@@ -1,5 +1,5 @@
 {
-  "item-shield-wicker" : "Wicker Shield",
+  "item-shield-crude-square-wicker" : "Wicker Shield",
   "item-shield-pelt" : "Hide Shield",
   "item-shield-leather" : "Leather Shield",
   "item-shield-linen" : "Composite Shield",
@@ -10,6 +10,7 @@
   "item-climbingpick-steel" : "Steel Climbing Pick",
   "item-glider" : "Glider",
   "item-nametag" : "Tablet",
+  "item-gasmask" : "Gas Mask",
 
   "block-climbingrope-start-*": "Rope Anchor",
   "block-climbingrope-section-*": "Climbing Rope",
@@ -19,6 +20,8 @@
   "block-firebox-dark" : "Firebox(Dark)",
   "block-nametag-raw" : "Unfired Tablet",
   "block-nametag-burned" : "Ceramic Tablet",
+  "block-potteryholder" : "Finished Pottery",
+  "block-chiselbench-*" : "Chiseling Bench",
 
   "blockdesc-omnichute-*" : "A chute that can easily bend to where you need it.",
   "blockdesc-nametag-*" : "A handy tablet to write down names of important things.",
@@ -28,6 +31,8 @@
 
   "blockhelp-anchor-deploy": "Deploy Rope",
   "blockhelp-anchor-retract": "Bring Up Rope",
+  "blockhelp-breakdown" : "Restore",
+  "blockhelp-addmat" : "Add Material",
 
   "itemhelp-shield": "Block",
   "itemhelp-glider-airbrake" : "Airbrake",
@@ -59,8 +64,8 @@
   "usefulstuffguide-text" : "<strong>A guide for using useful things</strong>
 Here are some helpful tips and reminders for using the Useful Stuff mod. Note: This guide was made with default settings in mind. If something does not line up with the guide, or there is an item/block missing, check the config to see if it was disabled or contact your server admin.
 
-<strong>Shields</strong>
-<a href=\"handbooksearch://shield\">Shields</a> offer the player the chance to completely block attacks in front of them, by crouching with it in either hand. Shields will break and durability lost is based on the damage dealt and the tier of the attack. Shields will not protect the user while attacking and they are less and less effective the longer you shield. Heavier metal shields wear you down much faster. Currently there are four shields: Wicker Shield(Stone Age), Pelt Shield(Early Copper Age), Leather Shield(Late Copper Age), Composite Shield(Iron Age).
+<strong>Wicker Shields</strong>
+The <a href=\"handbook://item-usefulstuff:shield-crude-square-wicker\">wicker shield</a> can offer early game protection, especially against surface drifters and wolves.
 
 <strong>Sluice</strong>
 The <a href=\"handbook://block-usefulstuff:sluice-north\">sluice ramp</a> can separate ores and valuables from any pannable soil/block, meaning you do not have to spend hours knee-deep in water filling your inventory with junk to find valuables. To use the ramp first you need a small current of water, the lowest current it will go to. Put the ramp below it and if you placed it right you should see water flow down. Place a hopper directly on top of the sluice and fill it with pannable soils, like sand, gravel, etc, and voila! Items separated fall out the front of it. Keep in mind it only gives potentially one item per block vs panning potential eight.
@@ -88,7 +93,7 @@ Crafted by placing a filled beenade and arrow into the crafting grid. Releases 1
 Tranquilizer Arrows
 Crafted by placing an arrow, resin, and either a golden poppy or catmint in crafting grid. Slows target down by 10% per hit and multiple hits can stop them from moving. (Note: Hostile entities can still attack and jump). Lasts for 1 in game hour. Has no effect of mechanical mobs
 Heart Stopper Arrows
-Crafted by placing an arrow, resin, fly agaric, and lily of the valley in the crafting grid. After 1 in game hour it deals 75% of the animals maximum health as damage. Effect does not stack. Has no effect on mechanical mobs
+Crafted by placing an arrow, resin, death cap or funeral bell mushroom, and lily of the valley in the crafting grid. After 1 in game hour it deals 75% of the animals maximum health as damage. Effect does not stack. Has no effect on mechanical mobs
 
 <strong>Pottery Kiln</strong>
 This multi-block structure can cook multiple clay pieces at a time, using less time and resources than the pit kiln. First you have to craft a <a href=\"handbooksearch://firebox\">firebox</a> from mudbricks. Then place it on the ground and right-click it. Use mudbricks to build it. All four air intakes and the vent must be clear in order for it to work. When finished building it place clay pieces on the floor inside around the vent and insert exactly 32 firewood, or 8 coal then ignite. By default, it will take 12 hours to bake everything. During this time you can not take/place items that were in before the process began. Also, items placed in after igniting will not burn. Finally breaking the structure or obstructing any of the air intakes or vent will stop the process. (Don't let grass grow in the vents). You will know it is finished when smoke no longer comes out the chimney.
@@ -96,12 +101,30 @@ This multi-block structure can cook multiple clay pieces at a time, using less t
 <strong>Ceramic Tablet</strong>
 The <a href=\"handbooksearch://tablet\">ceramic tablet</a> can be used to write down the names of items and entities that are unique to you. Once you have a fired tablet, place it on the ground and right click with a pigment item to write a name. Once you are finished with the name, save and pick it up. To assign the name to an entity, shift-right click the entity. This will not work on traders or other players! To name an item stack first ctrl + shift + right click and you should see, a message pop up in the info log. Take the item you want to name and swap it with the tablet. You should see another message if it was successful. When naming a entity or item it will be erased from the tablet. A tablet with no name can be used for erasing names and you would do that the same way you name something. Note: For items the name will be lost if it is transformed, for example cooking meat. Also placing a named block will also lose its name. Finally some items cannot be named, like ores for example.
 
+<strong>Chiseling Bench</strong>
+The <a href=\"handbook://block-usefulstuff:chiselbench-north\">chiseling bench</a> can be used to quickly add materials to a chiseling workpiece or return the blocks it was originally made from. To use place a chiseled block on top of the bench. To add a material, right click the block you want to add with a chisel to first turn it into a chisel block. Then pick it up, and right click on the chisel bench to add that material to your workpiece. To restore a chiseled work back to its original blocks, simply shift right click with a chisel on the bench and the blocks will drop on top of the bench.
+
 <strong>Lantern clip on</strong>
 <a href=\"handbooksearch://lantern\">Lanterns</a> can be clipped on a <a href=\"handbooksearch://backpack\">backpack</a> to free up your hands. The leftmost backpack must be a backpack item(hunter backpack, leather backpack, or the upgradeable backpacks from ABCS mod) and the lantern must be placed in the first inventory slot in the top left, it must be a vanilla lantern, Primitive Survival wooden lantern, or a MoreClasses lantern to work.
+
+<strong>Gas Mask</strong>
+The gas mask is an item that works with the Asphyxia mod. When the user puts it on, in the mask slot, it will protect them from the toxic effects of nitrogen dioxide, sulfur dioxide, coal dust, and silica dust. It will take damage over time and if fully depleted will no longer protect you. Use charcoal to refill the filter like you would use linen to repair it.
 
 <strong>Other useful stuff to know</strong>
 Pulverizer can break some rocks down into sand and will crush claystone into fire clay
 Toolheads and tools can be grinded into metal bits in the quern. Metal tools will drop metal bits when they break
 Clothes can be recycled for twine or leather by putting it into a crafting grid with a knife.
 ",
+
+
+"block-welcomemat" : "Welcome Mat",
+
+"blockdesc-welcomemat" : "Invite weary traders for a night of rest and trade.",
+"Not built right!": "Not built right!",
+"No place to rest!": "No place to rest!",
+"No food for next guest!": "No food for next guest!",
+"Another merchant arrives in {0} days": "Another merchant arrives in {0} days",
+"Another merchant arrives in less than a day": "Another merchant arrives in less than a day",
+"Merchant leaves in {0} days": "Merchant leaves in {0} days",
+"Merchant leaves in less than a day": "Merchant leaves in less than a day",
 }

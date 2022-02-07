@@ -1,0 +1,31 @@
+{
+	code: "potteryholder",
+	entityClass: "PotteryHolder",
+	behaviors: [{name: "UnstableFalling"}],
+	attributes: {
+		handbook: {
+			exclude: true,
+		}
+	},
+	shape: { base: "game:block/clay/lootvessel" },
+	blockmaterial: "Ceramic",
+	creativeinventory: { "general": [""], "decorative": [""] },
+	replaceable: 1000,
+	resistance: 0.45,
+	maxStackSize: 4,
+	lightAbsorption: 0,
+	sounds: {
+		walk: "game:walk/stone",
+		break: "game:block/ceramicbreak",
+		hit: "game:block/ceramicbreak",
+		place: "game:block/ceramicplace"
+	},
+	sideopaque: {
+		all: false
+	},
+	sidesolid: {
+		all: false
+	},
+	collisionSelectionBox: { x1: 0.125, y1: 0, z1: 0.125, x2: 0.875, y2: 1, z2: 0.875 },
+  drops: [],
+}
