@@ -42,7 +42,7 @@ namespace UsefulStuff
             {
                 ItemStack itemstack = itemslot.Itemstack;
 
-                int leftDurability = itemstack.Attributes.GetInt("durability", GetDurability(itemstack));
+                int leftDurability = itemstack.Attributes.GetInt("durability", GetMaxDurability(itemstack));
                 leftDurability = GameMath.Clamp(leftDurability - amount, 0, Durability);
                 itemstack.Attributes.SetInt("durability", leftDurability);
 

@@ -34,8 +34,8 @@ namespace UsefulStuff
             }
 
             api.World.Config.SetBool("UStentbagEnabled", UsefulStuffConfig.Loaded.TentbagEnabled);
-            api.World.Config.SetBool("USshieldsEnabled", UsefulStuffConfig.Loaded.ShieldsEnabled);
-            api.World.Config.SetBool("USclimbingRopeEnabled", UsefulStuffConfig.Loaded.ClimbingRopeEnabled);
+            // api.World.Config.SetBool("USshieldsEnabled", UsefulStuffConfig.Loaded.ShieldsEnabled);
+            // api.World.Config.SetBool("USclimbingRopeEnabled", UsefulStuffConfig.Loaded.ClimbingRopeEnabled);
             api.World.Config.SetBool("USclimbingPickEnabled", UsefulStuffConfig.Loaded.ClimbingPickEnabled);
             api.World.Config.SetBool("USsluiceEnabled", UsefulStuffConfig.Loaded.SluiceEnabled);
             api.World.Config.SetBool("USgliderEnabled", UsefulStuffConfig.Loaded.GliderEnabled);

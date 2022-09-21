@@ -360,10 +360,10 @@ namespace UsefulStuff
 
                 Block parent = null;
                 IWorldChunk parentChunk = chunks[parentChunkVec];
-                if (!blocks.ContainsKey(parentChunk.Unpack_AndReadBlock(toLocalIndex(bpos.AsBlockPos)))) continue;
-
-                parent = blocks[parentChunk.Unpack_AndReadBlock(toLocalIndex(bpos.AsBlockPos))];
-
+                if (!blocks.ContainsKey(parentChunk.UnpackAndReadBlock(toLocalIndex(bpos.AsBlockPos), BlockLayersAccess.Default))) continue;
+                
+                parent = blocks[parentChunk.UnpackAndReadBlock(toLocalIndex(bpos.AsBlockPos), BlockLayersAccess.Default)];
+                
                 foreach (BlockFacing facing in faces)
                 {
                     if (SolidCheck(parent, facing)) continue;
@@ -378,7 +378,7 @@ namespace UsefulStuff
 
                     if (chunk == null) continue;
 
-                    int blockId = chunk.Unpack_AndReadBlock(toLocalIndex(curPos));
+                    int blockId = chunk.UnpackAndReadBlock(toLocalIndex(curPos), BlockLayersAccess.Default);
 
                     if (!blocks.TryGetValue(blockId, out atPos)) atPos = blocks[blockId] = blockAccessor.GetBlock(blockId);
 

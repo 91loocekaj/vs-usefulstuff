@@ -285,7 +285,7 @@ namespace UsefulStuff
             if (world.Side != EnumAppSide.Server || byEntity == null) return;
             IItemStack itemstack = itemslot.Itemstack;
 
-            int leftDurability = itemstack.Attributes.GetInt("durability", __instance.GetDurability(itemstack));
+            int leftDurability = itemstack.Attributes.GetInt("durability", __instance.GetMaxDurability(itemslot.Itemstack));
             leftDurability -= amount;
 
             if (leftDurability <= 0 && __instance.Attributes?["brokenReturn"] != null)
