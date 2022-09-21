@@ -71,9 +71,9 @@ namespace UsefulStuff
             if (place == null) { noroom = true; return; }
 
             Api.World.BlockAccessor.WalkBlocks(new BlockPos(place.Location.MinX, place.Location.MinY, place.Location.MinZ), new BlockPos(place.Location.MaxX, place.Location.MaxY, place.Location.MaxZ),
-                (block, pos) =>
+                (block, posX, posY, posZ) =>
                 {
-                    if (block.Code.Path == Block.Code.Path && pos != Pos)
+                    if (block.Code.Path == Block.Code.Path && new BlockPos(posX, posY, posZ) != Pos)
                     {
                         Api.World.BlockAccessor.BreakBlock(Pos, null);
                     }
@@ -252,7 +252,7 @@ namespace UsefulStuff
             bool result = false;
 
             Api.World.BlockAccessor.WalkBlocks(new BlockPos(area.MinX, area.MinY, area.MinZ), new BlockPos(area.MaxX, area.MaxY, area.MaxZ),
-                (block, pos) =>
+                (block, posX, posY, posZ) =>
                 {
                     if (block.Code.BeginsWith("game","bed"))
                     {
@@ -270,11 +270,11 @@ namespace UsefulStuff
             bool result = false;
 
             Api.World.BlockAccessor.WalkBlocks(new BlockPos(area.MinX, area.MinY, area.MinZ), new BlockPos(area.MaxX, area.MaxY, area.MaxZ),
-                (block, pos) =>
+                (block, posX, posY, posZ) =>
                 {
                     BlockEntityGenericContainer bec;
 
-                    if ((bec = Api.World.BlockAccessor.GetBlockEntity(pos) as BlockEntityGenericContainer) == null) return;
+                    if ((bec = Api.World.BlockAccessor.GetBlockEntity(new BlockPos(posX, posY, posZ)) as BlockEntityGenericContainer) == null) return;
 
                     foreach (ItemSlot slot in bec.Inventory)
                     {

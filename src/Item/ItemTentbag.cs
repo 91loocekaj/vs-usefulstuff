@@ -44,7 +44,8 @@ namespace UsefulStuff
                 BlockPos end = blockSel.Position.AddCopy(size, Math.Max(height, 3), size);
                 bool canPack = true;
 
-                byEntity.World.BlockAccessor.WalkBlocks(start, end, (block, pos) => {
+                byEntity.World.BlockAccessor.WalkBlocks(start, end, (block, posX, posY, posZ) => {
+                    BlockPos pos = new BlockPos(posX, posY, posZ);
                     if (!canPack) return;
                     if (byPlayer != null && !byEntity.World.Claims.TryAccess(byPlayer, pos, EnumBlockAccessFlags.BuildOrBreak))
                     {
@@ -78,7 +79,7 @@ namespace UsefulStuff
                 byEntity.World.SpawnItemEntity(packed, blockSel.Position.ToVec3d().Add(0, 1, 0));
 
                 end.Add(-1, -1, -1);
-                byEntity.World.BulkBlockAccessor.WalkBlocks(start, end, (block, pos) => { if (block.BlockId != 0) byEntity.World.BulkBlockAccessor.SetBlock(0, pos); });
+                byEntity.World.BulkBlockAccessor.WalkBlocks(start, end, (block, posX, posY, posZ) => { if (block.BlockId != 0) byEntity.World.BulkBlockAccessor.SetBlock(0, new BlockPos(posX, posY, posZ)); });
                 byEntity.World.BulkBlockAccessor.Commit();
                 slot.TakeOutWhole();
                 byEntity.ReceiveSaturation(-UsefulStuffConfig.Loaded.TentBuildEffort);
@@ -89,8 +90,9 @@ namespace UsefulStuff
                 BlockPos end = blockSel.Position.AddCopy(size, Math.Max(height, 3), size);
                 bool canPlace = true;
 
-                byEntity.World.BlockAccessor.WalkBlocks(start, end, (block, pos) => 
+                byEntity.World.BlockAccessor.WalkBlocks(start, end, (block, posX, posY, posZ) => 
                 {
+                    BlockPos pos = new BlockPos(posX, posY, posZ);
                     if (!canPlace) return;
                     if (byPlayer != null && !byEntity.World.Claims.TryAccess(byPlayer, pos, EnumBlockAccessFlags.BuildOrBreak))
                     {
